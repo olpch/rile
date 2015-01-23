@@ -50,6 +50,7 @@
 	$routes->get( '/api/contratos', 'contract#index2');
 
 	
+	$routes->get( '/notificaciones', 'notify#index');
 
 
 	//  ==> Invoice Controller
