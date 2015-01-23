@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=utf-8>
+	<title>RILE - Ruta de Inserción Laboral Exitosa</title>
+    <meta name="description" content="">
+    <meta name="author" content="Gente Estrategica">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<?php
+		$this->getCSS('bootstrap.min'); 
+		$this->getCSS('font-awesome.min'); 
+    
+        $this->getCSS('smartadmin-production-plugins.min'); 
+        $this->getCSS('smartadmin-production.min');
+        $this->getCSS('smartadmin-skins.min');
+
+        $this->getCSS('smartadmin-rtl.min');
+
+        $this->getCSS('demo.min');
+        $this->getFavicon();
+        $this->googleFont('Fjord+One');
+        $this->googleFont('Raleway');
+	?>
+<body> 
+    <?php 
+
+        $this->renderContent(); 
+
+        $this->getJS("libs/jquery.min");
+        $this->getJS("libs/jquery-ui.min");
+
+        $this->getJS("app.config");
+        $this->getJS("plugin/jquery-touch/jquery.ui.touch-punch.min");
+        $this->getJS("libs/bootstrap.min");
+        //$this->getJS("libs/underscore-min");
+           
+        $this->getJS("notification/SmartNotification.min");
+        $this->getJS("smartwidgets/jarvis.widget.min");
+        // $this->getJS("plugin/easy-pie-chart/jquery.easy-pie-chart.min");
+        // $this->getJS("plugin/sparkline/jquery.sparkline.min");
+        $this->getJS("plugin/jquery-validate/jquery.validate.min");
+        $this->getJS("plugin/masked-input/jquery.maskedinput.min");
+        $this->getJS("plugin/select2/select2.min");
+        $this->getJS("plugin/bootstrap-slider/bootstrap-slider.min");
+        $this->getJS("plugin/msie-fix/jquery.mb.browser.min");
+        $this->getJS("plugin/fastclick/fastclick.min");
+
+        $this->getJS("demo.min");
+        $this->getJS("app.min");
+
+        // $this->getJS("speech/voicecommand.min");
+        // $this->getJS("smart-chat-ui/smart.chat.ui.min");
+        // $this->getJS("smart-chat-ui/smart.chat.manager.min");    
+	?>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<?php
+		$this->getCSS('bootstrap.min'); 
+		$this->getCSS('smartadmin-production');
+		$this->getCSS('errors');
+		$this->getFavicon();
+	?>
+</head>
+<body>
+	
+
+
+<div class="row" id="errorbox">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="text-center error-box">
+					<h1 class="error-text-2 bounceInDown animated"> Error 404 <span class="particle particle--c"></span><span class="particle particle--a"></span><span class="particle particle--b"></span></h1>
+					<h2 class="font-xl"><strong><i class="fa fa-fw fa-warning fa-lg text-warning"></i> Página <u>No</u> encontrada.</strong></h2>
+					<br />
+					<p class="lead">
+						La página solicitada no pudo ser encontrar, puede inténtarlo de nuevo <br/>ó bien ponerse en contacto con soporte técnico.
+					</p>
+					<p class="font-md">
+						<b>... That didn't work on you? Dang. May we suggest a search, then?</b>
+					</p>
+					<br>
+					<div class="error-search well well-lg padding-10">
+						<div class="input-group">
+							<input class="form-control input-lg" type="text" placeholder="let's try this again" id="search-error">
+							<span class="input-group-addon"><i class="fa fa-fw fa-lg fa-search"></i></span>
+						</div>
+					</div>
+
+					<div class="row">
+
+						<div class="col-sm-12">
+							<ul class="list-inline">
+								<li>
+									&nbsp;<a href="javascript:void(0);">Dashbaord</a>&nbsp;
+								</li>
+								<li>
+									.
+								</li>
+								<li>
+									&nbsp;<a href="javascript:void(0);">Inbox (14)</a>&nbsp;
+								</li>
+								<li>
+									.
+								</li>
+								<li>
+									&nbsp;<a href="javascript:void(0);">Calendar</a>&nbsp;
+								</li>
+								<li>
+									.
+								</li>
+								<li>
+									&nbsp;<a href="javascript:void(0);">Gallery</a>&nbsp;
+								</li>
+								<li>
+									.
+								</li>
+								<li>
+									&nbsp;<a href="javascript:void(0);">My Profile</a>&nbsp;
+								</li>
+							</ul>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- end row -->
+
+	<script type="text/javascript">
+	/* DO NOT REMOVE : GLOBAL FUNCTIONS!
+	 *
+	 * pageSetUp(); WILL CALL THE FOLLOWING FUNCTIONS
+	 *
+	 * // activate tooltips
+	 * $("[rel=tooltip]").tooltip();
+	 *
+	 * // activate popovers
+	 * $("[rel=popover]").popover();
+	 *
+	 * // activate popovers with hover states
+	 * $("[rel=popover-hover]").popover({ trigger: "hover" });
+	 *
+	 * // activate inline charts
+	 * runAllCharts();
+	 *
+	 * // setup widgets
+	 * setup_widgets_desktop();
+	 *
+	 * // run form elements
+	 * runAllForms();
+	 *
+	 ********************************
+	 *
+	 * pageSetUp() is needed whenever you load a page.
+	 * It initializes and checks for all basic elements of the page
+	 * and makes rendering easier.
+	 *
+	 */
+
+	pageSetUp();
+	
+	/*
+	 * ALL PAGE RELATED SCRIPTS CAN GO BELOW HERE
+	 * eg alert("my home function");
+	 * 
+	 * var pagefunction = function() {
+	 *   ...
+	 * }
+	 * loadScript("js/plugin/_PLUGIN_NAME_.js", pagefunction);
+	 * 
+	 * TO LOAD A SCRIPT:
+	 * var pagefunction = function (){ 
+	 *  loadScript(".../plugin.js", run_after_loaded);	
+	 * }
+	 * 
+	 * OR
+	 * 
+	 * loadScript(".../plugin.js", run_after_loaded);
+	 */
+	
+	// pagefunction
+	
+	var pagefunction = function() {
+		
+	};
+	
+	// end pagefunction
+	
+	// run pagefunction on load
+	pagefunction();
+	
+	</script>
+
+
+
+
+</body>
+</html>

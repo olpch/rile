@@ -1,0 +1,100 @@
+<header id="header">
+  <div id="logo-group">
+    
+    <span id="logo"> 
+      <img src="assets/img/rile/logo-min.png" alt="RILE Ruta de insercion laboral exitosa.">
+    </span>
+
+    <span id="activity" class="activity-dropdown"> 
+      <i class="fa fa-user"></i> <b class="badge"> 21 </b> 
+    </span>
+
+    <div class="ajax-dropdown">
+      <div class="btn-group btn-group-justified" data-toggle="buttons">
+        <label class="btn btn-default">
+          <input type="radio" name="activity" id="ajax/notify/mail.html">
+              Mensajes (14) </label>
+        <label class="btn btn-default">
+          <input type="radio" name="activity" id="ajax/notify/notifications.html">
+              Notificaciones </label>
+        <label class="btn btn-default">
+          <input type="radio" name="activity" id="ajax/notify/tasks.html">
+              Tareas </label>
+      </div>
+          
+      <div class="ajax-notifications custom-scroll">
+        <div class="alert alert-transparent">
+          <h4>Click a button to show messages here</h4>
+            This blank page message helps protect your privacy, or you can show the first message here automatically.
+        </div>
+        <i class="fa fa-lock fa-4x fa-border"></i>
+      </div>
+      <span> Last updated on: 12/12/2013 9:43AM
+        <button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
+          <i class="fa fa-refresh"></i>
+        </button> 
+      </span>
+    </div>
+  </div>
+
+  <div class="project-context hidden-xs">
+    <span class="label">Usuario:</span>
+    <span class="project-selector dropdown-toggle" data-toggle="dropdown">Omar Lee Paba Ching <i class="fa fa-angle-down"></i></span>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="javascript:void(0);">Online e-merchant management system - attaching integration with the iOS</a>
+      </li>
+      <li>
+        <a href="javascript:void(0);">Notes on pipeline upgradee</a>
+      </li>
+      <li>
+        <a href="javascript:void(0);">Assesment Report for merchant account</a>
+      </li>
+      <li class="divider"></li>
+      <li>
+        <a href="javascript:void(0);"><i class="fa fa-power-off"></i> Clear</a>
+      </li>
+    </ul>
+  </div>
+    
+  <?php $this->renderLayout('headerview'); ?>
+  
+</header>
+
+
+<aside id="left-panel">
+  <div class="login-info">
+    <span style="margin: 10px 0px;">
+      <i class="fa fa-th-list" style="margin: 0px 9px;"></i>
+      Menu Principal
+    </span>
+  </div>
+  <nav>
+    <?php $this->renderLayout('leftmenu'); ?>
+  </nav>
+  <span class="minifyme" data-action="minifyMenu"> <i class="fa fa-arrow-circle-left hit"></i> </span>
+</aside>
+
+
+<div id="main" role="main">
+
+  <div id="ribbon">
+
+    <span class="ribbon-button-alignment"> 
+      <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true" data-reset-msg="Would you like to RESET all your saved widgets and clear LocalStorage?"><i class="fa fa-refresh"></i></span> 
+    </span>
+
+    <ol class="breadcrumb">
+    </ol>
+       
+  </div>
+
+  <div id="content">
+
+  </div>
+      
+</div>
+
+<?php $this->renderLayout('footer'); ?>
+
+

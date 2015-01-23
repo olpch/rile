@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RILE - Ruta de Inserción Laboral Exitosa</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<?php
+		$this->getCSS('bootstrap.min'); 
+		$this->getCSS('font-awesome.min');
+		// $this->getCSS('lockscreen');
+		$this->getCSS('login_rile');
+		$this->getFavicon();
+	?>
+
+</head>
+<body>
+
+<div class="contenido_ini">
+	<div class="imagenes">
+		<img src="assets/img/rile/rile-03.png">
+		<div class="ima">
+			<img src="assets/img/rile/img-04.png">
+			<img src="assets/img/rile/img-05.png">
+			<img src="assets/img/rile/img-06.png">
+			<img src="assets/img/rile/img-07.png">
+		</div>
+		<div class="plat">
+			<p>La plataforma que asegura la <span>calidad</span>
+			de nuestros egresados</p>
+			
+		</div>
+	</div>
+	<div class="contenido">
+		<div class="inicio">
+			<p>Inicio de Sesión</p>
+			<div style="text-align: center">
+				<input type="text" id="x_usuario" name="x_usuario" placeholder="Usuario o Email">
+				<input type="password" id="x_clave" name="x_clave" placeholder="Contraseña" onkeypress="if (event.keyCode == 13) iniciar_sesion()">
+			</div>
+			<div class="letra">
+					<a id="olvido" href="olvidar.php">¿Olvidaste la contraseña?</a>
+					<a id="res" href="empresas/">Registrese Aqui</a>
+			</div>
+			<div style="text-align: center; margin-top: 30px">
+				<input type="button" class="ingresar" onClick="javascript: iniciar_sesion();" id="btn" value="Ingresar a la Plataforma">
+			</div>
+		</div>
+		<div style="text-align: center; margin-top: 15px">
+			<img src="assets/img/rile/acc-03.png">
+		</div>
+	</div>
+</div>
+
+	
+
+</body>
+</html>
