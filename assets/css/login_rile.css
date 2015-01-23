@@ -1,0 +1,133 @@
+
+		@font-face {
+			font-family: SRE;
+			src: url(fuentes/Sanchezregular.otf) format('opentype');
+		}
+
+		@font-face {
+			font-family: SEM;
+			src: url(fuentes/Raleway-SemiBold.ttf) format('truetype');
+		}	
+
+		@font-face {
+			font-family: RAL;
+			src: url(fuentes/Raleway-Regular.ttf) format('truetype');
+		}	
+
+		body {
+			margin: 0;
+			padding: 0;	
+		}
+		.contenido_ini {
+			margin: 0 auto;
+			width: 900px;
+			height: auto;
+			margin-top: 100px;
+		}
+
+		.imagenes {
+			float: left;
+			width: 457px;
+		}
+
+		.ima {
+			margin-top: 20px;
+			height: 189px;
+		}
+
+		.ima img:nth-child(1){
+			margin-left: 5px;
+		}
+
+		.ima img {
+			float: left;
+			margin-left: 10px;
+			opacity: 0.6;
+		}
+
+		.ima img:hover {
+			opacity: 1;
+		}
+
+		.plat {
+			margin-top: 20px;
+			width: 100%;
+			height: 88px;
+			background-color: #E6E7E8;
+			border-radius: 5px;
+			text-align: center;
+		}
+
+		.plat p {
+			width: 300px;
+			margin-left: 85px;
+			padding-top: 23px;
+			font-family: SRE;
+		}
+
+		.plat p span {
+			color: #F05A28;
+		}
+
+		.contenido {
+			float: left;
+			width: 420px;
+			margin-left: 20px;
+		}
+
+		.contenido .inicio {
+			width: 100%;
+			height: 360px;
+			border: 1px solid #CCCCCC;
+			border-radius: 5px;
+			
+		}
+
+		.contenido .inicio p {
+			font-family: SEM;
+			font-size: 25px;
+			margin-top: 50px;
+			color: #F05A28;
+			text-align: center;
+		}
+
+		input[type="text"], input[type="password"] {
+			width: 306px;
+			height: 38px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			margin-top: 15px;
+			padding-left: 15px;
+		}
+
+		.letra {
+			margin-top: 20px;
+			margin-left: 50px;
+		}
+
+		.letra #olvido {
+			font-family: RAL;
+			font-size: 14px;
+			color: #929497;
+			text-decoration: none;
+
+		}
+
+		.letra #res {
+			font-family: RAL;
+			font-size: 14px;
+			color: #F05A28;
+			margin-left: 85px;
+		}
+
+		.ingresar {
+			width: 218px;
+			height: 33px;
+			font-family: SEM;
+			font-size: 15px;
+			border: none;
+			border-radius: 4px;
+			color: #fff;
+			background-color: #F6921E;
+			text-align: center;
+		}

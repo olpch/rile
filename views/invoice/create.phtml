@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<?php
+		$this->getCSS('bootstrap.min'); 
+		$this->getCSS('font-awesome.min'); 
+    //$this->getCSS('exteds');
+    $this->getCSS('okystyles');
+    $this->getFavicon();
+    $this->googleFont('Fjord+One');
+    $this->googleFont('Raleway');
+	?>
+</head>
+<body>
+
+	<div class="row" style="margin: 8px;">
+		<div class="col-sm-3 col-md-4">
+			<div class="row">
+				<div class="opanel">
+		      		<div class="opanel-body">
+		      			<img src="../assets/img/core/logo.png" style="margin: 5px;">
+		      			<table class="table">
+		      				<tbody>
+		      					<tr>
+		      						<th>Fecha: </th>
+		      						<td><?php echo date("F j, Y, g:i a"); ?></td>
+		      					</tr>
+		      					<tr>
+		      						<th>Vendedor: </th>
+		      						<td>Omar Lee Paba Ching</td>
+		      					</tr>
+		      					<tr>
+		      						<th>Cliente: </th>
+		      						<td>Omar Lee Paba Ching</td>
+		      					</tr>
+		      				</tbody>	
+		      			</table>  			
+		      		</div>
+		    	</div>
+			</div>
+			<div class="row">
+				<div class="opanel">
+		      		<div class="opanel-body" style="padding: 5px;">
+		      		<h3>Ingreso de Articulos</h3>
+		      			<label for="code_item">Código del Articulo</label>
+		      			<input type="text" class="form-control" id="code_item" name="code_item" maxlength="13" autofocus/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-9 col-md-8">
+		    <div class="opanel">
+	    		<div class="opanel-body" style="padding: 5px 8px;">
+    	  			<span class="numInvoice">Nº 0009</span>
+    	  			<h3>Detalle de la Fáctura</h3>
+	    		</div>
+	    		<div class="opanel-body" style="overflow: hidden;">
+	    	  		<div id="details_invoice">
+		    	  		<table class="details_table">
+		    	  			<tr>
+		    	  				<th width="30px"  class="hidden-sm ocenter">nº</th>
+		    	  				<th width="120px" class="hidden-sm ocenter">Código</th>
+		    	  				<th width="*%"    class="ocenter">Nombre</th>
+		    	  				<th width="50px"  class="ocenter">Cant.</th>
+		    	  				<th width="110px" class="ocenter">Valor</th>
+		    	  				<th width="120px" class="ocenter">sub. total</th>
+		    	  				<th width="60px"  class="ocenter">Accion</th>
+		    	  			</tr>
+		    	  				<?php if(count($this->details)<1){ ?>
+				    	  			<tr>
+				    	  				<td>No se han gregado articulos...</td>
+				    	  			<tr>
+				    	  			<?php }else{ ?>
+				    	  				<?php for($r=0;$r<=10;$r++){ ?>
+				    	  					<tr>
+					    	  					<td class="hidden-sm ocenter"><?php echo $r; ?></td>
+					    	  					<td class="hidden-sm oright">0701234567890</td>
+						    	  				<td>Bolso de piel de camello</td>
+						    	  				<td class="ocenter">12</td>
+						    	  				<td class="oright">$ 9.999.999.00</td>
+						    	  				<td class="oright">$ 999.999.999.00</td>
+						    	  				<td>Quitar</td>
+					    	  				
+					    	  				<!-- <td width="50px"  class="ocenter"> <?php //echo $r; ?></td>
+				    	  					<td width="120px" class="ocenter"> 0701234567890</td>
+					    	  				<td width="*%"    class="oleft"  > Bolso de piel de camello</td>
+					    	  				<td width="50px"  class="ocenter"> 12</td>
+					    	  				<td width="95px"  class="oright" > $ 9.999.999.00</td>
+					    	  				<td width="110px" class="oright" > $ 999.999.999.00</td>
+					    	  				<td width="80px"  class="ocenter"> Quitar</td>	 -->
+
+					    	  				</tr>
+				    	  				<?php } ?>
+
+				    	  				<?php //foreach($this->details as $detail){ ?>
+					    	  			<!-- <tr>
+					    	  				<td><?php //echo $detail['item']; ?></td>
+					    	  				<td><?php// echo $detail['name']; ?></td>
+					    	  				<td><?php //echo $detail['cant']; ?></td>
+					    	  				<td><?php// echo $detail['sell']; ?></td>
+					    	  				<td><?php// echo $detail['cant'] * $detail['sell']; ?></td>
+					    	  				<td>Quitar</td>
+					    	  			<tr> -->
+				    	  				<?php //} ?>
+
+				    	  			<?php } ?>
+		    	  		</table>
+	    	  		</div>
+	    	  	</div>
+	    	  	<div class="opanel-body" style="padding: 2px 5px;text-aling: right">
+        			<h3 style="float: right">Total de la factura: <b>$ 99.999.999.00</b></h3>
+      			</div>      
+	    	</div>		
+		</div>
+	</div>
+
+</body>
+</html>

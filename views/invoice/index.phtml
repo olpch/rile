@@ -1,0 +1,46 @@
+<div class="row">
+	<div class="col-md-6">
+		
+		<div class="opanel">
+			<div class="opanel-heading">
+				<div class="title">
+					<i class="glyphicon glyphicon-home"> </i> 
+					<label>Facturas del mes</label>
+				</div>
+				<!-- div class="titleclose"></div -->
+				<div class="glyphicon glyphicon-chevron-down closepanel"></div>
+			</div>
+			<div class="opanel-body">
+				<?php if(count($this->invoices)<=0){ ?>
+					<span>No existen facturas para visualizar!</span>
+				<?php }else{ ?>
+					<table class="table">
+						<thead>
+							<tr>
+								<td>Fecha</td>
+								<td>Vendedor</td>
+								<td>Comprador</td>
+								<td>Valor</td>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ($this->invoices as $invoice){ ?>
+							<tr>
+								<td><?php echo $invoice['created'];?></td>
+								<td><?php echo $invoice['created'];?></td>
+								<td><?php echo $invoice['created'];?></td>
+								<td><?php echo $invoice['created'];?></td>
+							</tr>
+							<?php } ?>
+						</tbody>
+					</table>
+				<?php } ?>
+			</div>
+		</div>
+	
+	</div>
+	
+	<div class="col-md-6">
+	</div>
+
+</div>

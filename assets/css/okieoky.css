@@ -1,0 +1,123 @@
+body {
+	background: url("../img/background/background.gif");
+}
+
+.logo-okieoky{
+	margin-right: 20px;
+}
+
+ #content-main{
+ 	width: 1000px;
+ 	height: 568px;
+	position: absolute;
+	bottom: 15px;
+	top: 60px;
+	left: 15px;
+	right: 15px;
+	margin: 0px auto;
+ }
+
+.content-web{
+	width: 100%;
+ 	height: 564px;
+	background-color: #fff;
+	
+}
+
+ .oky-font{
+	color: #f24 !important;
+ }
+
+ .row-detail{
+	margin: 5px;
+	border: 1px solid #101010;
+	border-radius: 3px;
+	width: 148px;
+ }
+
+ .row-detail .title{
+ 	background-color: #101010;
+ 	color: #999;
+ 	padding: 2px 5px;
+ 	text-overflow: ellipsis;
+  	white-space: nowrap;
+  	overflow: hidden;
+  	margin: 0px;
+ }
+ .row-detail .content{
+ 	margin: 2px;
+ 	font-size: 8pt;
+}
+
+ .item-card{
+	min-height: 20px;
+	max-width: 190px;
+ }
+
+ .item-card img{
+ 	position: absolute;
+ 	top:  0px;
+ 	left: 0px;
+ 	height: 50px;
+ 	width:  50px;
+ }
+ 
+ .item-card label.title{
+ 	height: 21px;
+ 	position: absolute;
+ 	left: 58px;
+ 	width: 160px;
+ 	font-size: 11pt;
+ 	font-weight: bold; 
+ } 
+
+ .item-card .subtitle{
+ 	position: absolute; 
+ 	top: 30px;
+ 	left: 58px;
+}
+
+.item-list{
+	position: static;
+	overflow: auto;
+	height: 327px;
+}
+
+.list-group-item{
+	margin: 3px;
+}
+
+
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.input-group{
+	margin: 2px 0px;
+	/* width: 100%; */
+}
+
+.cant-items{
+	position: absolute;
+	top:0px;
+	right: 0px;
+	color: #f1f1f1;
+	background: #101010;
+	padding: 1px 3px;
+	font-weight: bold;
+	
+}
+
+.color-view{
+	background-color: #FFCC00;
+	border: 2px solid #ccc;
+	height: 32px;
+	width: 32px;
+	float: right;
+	position: relative;
+	display: inline;
+	margin: 2px 0px;
+	border-radius: 0px 8px 8px 0px;
+}

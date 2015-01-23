@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<?php
+		$this->getCSS('bootstrap.min'); 
+		$this->getCSS('font-awesome.min'); 
+		$this->getCSS('smartadmin-production');
+		$this->getCSS('lockscreen');
+		$this->getCSS('okystyles');
+		$this->getFavicon();
+	?>
+
+</head>
+<body>
+	<div id="main" role="main">
+		<form  method="POST" action="#" 
+			id="signupform" action="index.html"
+			class="lockscreen animated flipInY">
+			<div class="logo">
+				<h1 class="semi-bold">
+					<!-- img src="img/logo-o.png" alt="" /
+					&#161;Bienvenidos! --> 
+				</h1>
+			</div>
+			<div>
+				<img src="assets/img/okylogobig.jpg" alt="" width="120" height="120" />
+				<div>
+					<h1>
+						<i class="fa fa-user fa-3x text-muted air air-top-right hidden-mobile"></i>
+						<i class="fa fa-lock text-muted"></i>
+						Registro de usuarios
+					</h1>
+					<div class="input-group">
+						<input class="form-control" type="text" placeholder="Documento de identificac&#243;n" pattern="\d*" maxlength="15" id="idcc" name="idcc" value="<?php $this->getPOST('idcc'); ?>" >
+						<div class="input-group-btn"><label>&nbsp;a</label></div>
+					</div>
+					<div style="height: 5px;">&nbsp;</div>
+					<div class="input-group">
+						<input class="form-control" type="text" placeholder="Nombres" name="first_name" id="first_name" value="<?php $this->getPOST('first_name'); ?>" >
+						<div class="input-group-btn"><label>&nbsp;a</label></div>
+					</div>
+					<div style="height: 5px;">&nbsp;</div>
+					<div class="input-group">
+						<input class="form-control" type="text" placeholder="Apellidos" name="last_name" id="last_name" value="<?php $this->getPOST('last_name'); ?>">
+						<div class="input-group-btn"><label>&nbsp;a</label></div>
+					</div>
+					<div style="height: 5px;">&nbsp;</div>
+					<div class="input-group">
+						<input class="form-control" type="email" placeholder="Correo electronico" name="email" id="email" value="<?php $this->getPOST('email'); ?>">
+						<div class="input-group-btn"><label>&nbsp;a</label></div>
+					</div>
+					<div style="height: 5px;">&nbsp;</div>
+					<div class="input-group">
+						<input class="form-control" type="password" placeholder="Contrase&#241;a" maxlength="10" name="pass" id="pass">
+					</div>
+					<div style="height: 5px;">&nbsp;</div>
+					<div class="input-group">
+						<input class="form-control" type="password" placeholder="Confirmar contrase&#241;a" maxlength="10" name="repass" id="repass">
+					</div>
+					<div style="height: 5px;">&nbsp;</div>
+					<div class="input-group">
+						<div class="input-group">
+						<a href="login">
+							<i class="fa fa-undo">
+								 Volver al inicio de seci&#243;n
+							</i></a>
+						</div>
+						<div class="input-group-btn">
+							<input class="btn btn-primary" type="submit">
+								Enviar
+							</input>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p class="font-xs margin-top-5">
+				www.Okieoky.com - Sucursal Cartagena.
+			</p>
+		</form>
+		<?php
+			if(isset($this->msgError)){
+				echo '<div class="msgError">';
+				echo '<span>'.$this->msgError.'</span>';
+				echo '</div>';
+			}
+		?>
+		
+	</div>
+	<?php
+		$this->getJS("libs/jquery.min");
+		$this->getJS("libs/jquery.validate.min");
+	?>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+	    $("#ok").hide();
+
+	    $("#signupform").validate({
+	        rules: {
+	        	idcc:  { required: true, minlength: 7, number: true},
+	            first_name:  { required: true, minlength: 2},
+	            last_name: { required: true, minlength: 2},
+	            email: { required:true, email: true},
+	            pass:  { required:true},
+	            repass:{ required:true, equalTo: "#pass"}
+
+	        },
+	        messages: {
+	        	idcc: "Numero de identificación no valido",
+	            first_name: "Debe introducir su nombre.",
+	            last_name: "Debe introducir su apellido.",
+	            email:  "Debe introducir un email válido.",
+	            pass:   "Bebe ingresar una contraseña.",
+	            repass: "No coinciden las contraseñas."
+	        }
+	        /*,
+	        submitHandler: function(form){
+	        	console.log('enviando...');
+	            var dataString = 'name='+$('#name').val()+'&lastname='+$('#lastname').val()+'...';
+	            $.ajax({
+	                type: "POST",
+	                url:"send.php",
+	                data: dataString,
+	                success: function(data){
+	                    $("#ok").html(data);
+	                    $("#ok").show();
+	                    $("#formid").hide();
+	                }
+	            });
+	        }*/
+	    });
+	});
+	</script>
+	</body>
+</html>
