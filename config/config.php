@@ -1,8 +1,8 @@
 <?php
 
-$serverip = strlen($_SERVER['SERVER_ADDR'])>7 ? $_SERVER['SERVER_ADDR'] : 'localhost';
 
 date_default_timezone_set('America/Bogota');
+$serverip = strlen($_SERVER['SERVER_ADDR'])>7 ? $_SERVER['SERVER_ADDR'] : 'localhost';
 
 define('BASE_URL', 'http://'.$serverip.'/RILE/');
 define('DEFAULT_CONTROLLER', 'index');
