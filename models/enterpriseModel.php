@@ -25,4 +25,23 @@ class EnterpriseModel extends Model{
 		return $res->fetch(PDO::FETCH_ASSOC);
 	}
 
+
+		public function create($params){
+		$c  = 'INSERT INTO users';
+		$c .= '(id, e_nit, e_razon_social, e_direccion, e_telefono, e_contacto, e_email, e_clave, e_obser, e_estado) ';
+		$c .= "values(null, :uid, :name, :direccion, :telefono, :contacto, :email, :opsw, '', 1";
+		$res = $this->_db->prepare($c)->execute(
+			array(
+				':uid' => $params['emp_nit'],
+				':name' => $params['emp_name'],
+				':direccion' => $params['emp_address'],
+				':telefono' => $params['emp_phone'],
+				':contacto' => $params['emp_name'],
+				':email' => $params['emp_mail'],
+				':opsw' => $params['emp_nit'],
+			)
+		);
+		return $res;
+	}
+
 }

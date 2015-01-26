@@ -7,44 +7,16 @@
     </div>
 
     <div class="row">
-        
-        <!-- NEW WIDGET START -->
         <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          
-          <!-- Widget ID (each widget will need unique ID)-->
           <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
-            <!-- widget options:
-              usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-              
-              data-widget-colorbutton="false" 
-              data-widget-editbutton="false"
-              data-widget-togglebutton="false"
-              data-widget-deletebutton="false"
-              data-widget-fullscreenbutton="false"
-              data-widget-custombutton="false"
-              data-widget-collapsed="true" 
-              data-widget-sortable="false"
-              
-            -->
             <header>
               <span class="widget-icon"> <i class="fa fa-search"></i> </span>
               <h2>Consulta</h2>        
-              
             </header>
-
-            <!-- widget div-->
             <div>
-              
-              <!-- widget edit box -->
               <div class="jarviswidget-editbox">
-                <!-- This area used as dropdown edit box -->
-                
               </div>
-              <!-- end widget edit box -->
-              
-              <!-- widget content -->
              <div class="widget-body no-padding">
-
             <table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
               <thead>                     
                 <tr>
@@ -87,9 +59,11 @@
                        echo '<a href="/RILE/estudiantes/'.$student['e_id'].'" data-toggle="modal" ';
                        echo 'data-target="#newContract" class="btn btn-default btn-xs">';
                        echo 'Mostar</a>';
-                       echo '<a href="/RILE/estudiantes/'.$student['e_id'].'" data-toggle="modal" ';
+                       echo '<a href="/RILE/estudiantes/'.$student['e_id'].'/edit" data-toggle="modal" ';
                        echo 'data-target="#newContract" class="btn btn-default btn-xs">';
-                       echo 'Editar</a>';
+                       echo 'Editar</a>';echo '<a href="/RILE/estudiantes/'.$student['e_id'].'/test" data-toggle="modal" ';
+                       echo 'data-target="#newContract" class="btn btn-default btn-xs">';
+                       echo 'Evaluar</a>';
                        echo '</td>';
                     echo '</tr>';
                   }

@@ -29,7 +29,7 @@
                       <th data-hide="phone,tablet">Telefono</th>
                       <th data-hide="phone,tablet">Email</th>
                       <!-- <th data-hide="phone">Observaciones</th> -->
-                      <th data-hide="phone,tablet">Observaciones</th>
+                      <th data-hide="phone,tablet">Obser..</th>
 
                     </tr>
                   </thead>
@@ -76,64 +76,59 @@
               </div>
               <div class="widget-body no-padding">
 
-                <form action="" id="checkout-form" class="smart-form" novalidate="novalidate">
+                <form action="/RILE/empresas" method="POST" id="checkout-form" class="smart-form" novalidate="novalidate">
                   <header>
                     Datos Básicos
                   </header>
                   <fieldset>
                     <section>
                       <label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-                        <input type="text" name="nit" placeholder="NIT">
+                        <input type="text" name="emp_nit" placeholder="NIT">
                       </label>
                     </section>
           
                     <section>
                       <label class="input"> <i class="icon-prepend fa fa-briefcase"></i>
-                        <input type="text" name="razon" placeholder="Razón social">
+                        <input type="text" name="emp_name" placeholder="Razón social">
                       </label>
                     </section>
                     <section>
                         <label class="input"> <i class="icon-prepend fa fa-map-marker"></i>
-                          <input type="text" name="address" placeholder="Dirección principal">
+                          <input type="text" name="emp_address" placeholder="Dirección principal">
                         </label>
                       </section>
                   </fieldset>
                   
                   <header>Datos de Contacto</header>
                   <fieldset>
-                    <div class="row">
-                      <section class="col col-6">
+                      
+                      <section>
                         <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                          <input type="text" name="first_name" placeholder="Nombres">
+                          <input type="text" name="emp_contact" placeholder="Contacto">
                         </label>
                       </section>
-                      <section class="col col-6">
-                        <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                          <input type="text" name="last_name" placeholder="Apellidos">
-                        </label>
-                      </section>
-                    </div>
-
-                    <div class="row">
-                      <section class="col col-6">
+                      
+                      <section>
                         <label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
-                          <input type="email" name="email" placeholder="Correo electronico">
+                          <input type="email" name="emp_mail" placeholder="Correo electronico">
                         </label>
                       </section>
-                      <section class="col col-6">
+                      
+                      <section>
                         <label class="input"> <i class="icon-prepend fa fa-phone"></i>
-                          <input type="tel" name="phone" placeholder="Telefono" data-mask="(999) 999-9999" class="valid">
+                          <input type="tel" name="emp_phone" placeholder="Telefono" data-mask="(999) 999-9999" class="valid">
                         </label>
                       </section>
-                    </div>
+
                   </fieldset>
                     <footer>
                       <button type="submit" class="btn btn-primary">
                         Guardar
                       </button>
-                      <button type="button" class="btn btn-info">
-                        Limpiar
-                      </button>
+                      <!-- <a href="#rile/estudiantes"><span class="menu-item-parent">
+                        <button type="button" class="btn btn-info">Limpiar</button>
+                        </span>
+                      </a> -->
                     </footer>
                 </form>
 
@@ -308,43 +303,35 @@
     var $checkoutForm = $('#checkout-form').validate({
     // Rules for form validation
       rules : {
-        first_name : { required : true },
-        last_name : { required : true },
-        email : { required : true, email : true },
-        address : { required : true },
-        razon : { required : true },
-        phone : { required : true },
-        nit : {
-          required : true,
-          digits : true
-        }
+        emp_nit : { required : true, digits : true },
+        emp_name : { required : true },
+        emp_address : { required : true },
+        emp_contact : { required : true },
+        emp_phone : { required : true },
+        emp_mail : { required : true, email : true }
       },
   
       // Messages for form validation
       messages : {
-        first_name : {
-          required : 'El nombre es requerido.'
+        emp_nit : {
+          required : 'El nombre es requerido.',
+          digits : 'Es permitido solo numeros.'
         },
-        last_name : {
+        emp_name : {
           required : 'El apellido es requrido.'
         },
-        email : {
-          required : 'El email es requerido.',
-          email : 'Formato emiail desconocido.'
-        },
-        phone : {
-          required : 'El numero telefonico es requerido.',
-          digits : 'Solo numeros.'
-        },
-        address : {
+        emp_address : {
           required : 'La direecion es requerida.'
         },
-        razon : {
+        emp_name : {
           required : 'Le razon social es requerida'
         },
-        nit : {
-          required : 'El nit es requerido',
-          digits : 'Solo numeros.'
+        emp_phone : {
+          required : 'El numero telefonico es requerido.'
+        },
+        emp_mail : {
+          required : 'El email es requerido.',
+          email : 'Formato de email desconocido.'
         }
       },
   
