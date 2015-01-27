@@ -50,6 +50,12 @@
 	$routes->get( '/api/estudiantes', 'student#index2');
 	$routes->get( '/api/contratos', 'contract#index2');
 
+
+	$routes->get( '/configuracion', 'config#index');
+	$routes->get( '/convenio/nuevo', 'config#newConvention');
+
+
+
 	
 	$routes->get( '/notificaciones', 'notify#index');
 

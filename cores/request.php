@@ -9,7 +9,10 @@
 		
 		public function __construct(){
 			global $routes;
-
+			/*echo '<br/><pre>';
+			print_r($routes);
+			echo '</pre>';
+			die();*/
 			$route = $routes->run();
 			if($route !== null){
 				$tmp = $route->controller();
