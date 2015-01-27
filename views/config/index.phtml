@@ -2,31 +2,97 @@
     <div class="row">
       <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
         <h1 class="page-title txt-color-blueDark">
-          <i class="fa-fw fa fa-cogs"></i> Congiguración de RILE</h1>
+          <i class="fa-fw fa fa-cogs"></i> Configuración del sistema</h1>
       </div>
     </div>
 
     <div class="row">
-      <article class="col-xs6 col-sm6 col-md6 col-lg-6">          
-        <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
-          <header>
-            <span class="widget-icon"> <i class="fa fa-mortar-board"></i> </span>
-              <h2>Programas</h2>        
-          </header>
-          <div>
-            <div class="jarviswidget-editbox"></div>
-            <div class="widget-body no-padding"></div>
+      <article class="col-xs4 col-sm4 col-md4 col-lg-4">
+        
+        <div class="row">
+          <article class="col-xs12 col-sm12 col-md12 col-lg-12">
+            
+            <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0"
+            data-widget-colorbutton="false"
+              data-widget-editbutton="false"
+              data-widget-deletebutton="false"
+              >
+              <header>
+                <span class="widget-icon"> <i class="fa fa-mortar-board"></i> </span>
+                  <h2>General</h2>        
+              </header>
+              <div>
+                <div class="jarviswidget-editbox"></div>
+                <div class="widget-body no-padding">
+                  <form action="" id="checkout-form" class="smart-form" novalidate="novalidate">
+                      <header>
+                        SMLV "Salario Minimo Legal Vigente"
+                      </header>
+                      <fieldset>
+                        <section>
+                          <label class="input">
+                            <input type="text" name="opsw" placeholder="Contraseña">
+                          </label>
+                        </section>
+                        <section>
+                          <button class="btn btn-default btn-xs">Actualizar</button>
+                        </section>
+                      </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div> <!-- fin del jarviswidget -->
+          </article>
+          <article class="col-xs12 col-sm12 col-md12 col-lg-12">
+          <div class="jarviswidget jarviswidget-color-darken" id="wid-id-2" data-widget-editbutton="false">
+            <header>
+              <span class="widget-icon"> <i class="glyphicon glyphicon-user"></i> </span>
+                <h2>Perfil</h2>        
+            </header>
+            <div>
+              <div class="jarviswidget-editbox"></div>
+              <div class="widget-body no-padding">
+                <form action="" id="checkout-form" class="smart-form" novalidate="novalidate">
+                    <header>
+                      Cambio de Contraseña
+                    </header>
+                    <fieldset>
+                      <section>
+                        <label class="input">
+                          <input type="text" name="opsw" placeholder="Contraseña">
+                        </label>
+                      </section>
+            
+                      <section>
+                        <label class="input">
+                          <input type="text" name="razon" placeholder="Nueva Contraseña">
+                        </label>
+                      </section>
+                      <section>
+                          <label class="input">
+                            <input type="text" name="address" placeholder="Confirmar Contraseña">
+                          </label>
+                        </section>
+                      <section>
+                        <button class="btn btn-default btn-xs">Actualizar</button>
+                      </section>
+                    </fieldset>
+                </form>
+              </div>
+            </div>
           </div>
-        </div>
+        </article>
+      </div>
       </article>
-      <article class="col-xs6 col-sm6 col-md6 col-lg-6">          
+      
+      <article class="col-xs8 col-sm8 col-md8 col-lg-8">          
         <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1"
           data-widget-colorbutton="false"
           data-widget-editbutton="false"
           data-widget-deletebutton="false"
           >
           <header>
-            <span class="widget-icon"> <i class="fa fa-mortar-board"></i> </span>
+            <span class="widget-icon"> <i class="fa fa-comments-o"></i> </span>
               <h2>Convenios</h2>
               <div class="widget-toolbar">
                 <a href="/RILE/convenio/nuevo" data-toggle="modal"
@@ -58,30 +124,15 @@
                   ?>
                 </tbody>
               </table>
-              <form>
-                <input />
-                <button>Crear</button>
-              </form>
             </div>
           </div>
         </div>
       </article>
     </div>
-
+    </article>
     <div class="row">
-      <article class="col-xs4 col-sm4 col-md4 col-lg-4">
-        <div class="jarviswidget jarviswidget-color-darken" id="wid-id-2" data-widget-editbutton="false">
-          <header>
-            <span class="widget-icon"> <i class="glyphicon glyphicon-user"></i> </span>
-              <h2>Perfil</h2>        
-          </header>
-          <div>
-            <div class="jarviswidget-editbox"></div>
-            <div class="widget-body no-padding"></div>
-          </div>
-        </div>
-      </article>
-       <article class="col-xs4 col-sm4 col-md4 col-lg-4">
+      
+       <article class="col-xs6 col-sm6 col-md6 col-lg-6">
         <div class="jarviswidget jarviswidget-color-darken" id="wid-id-3" 
           data-widget-colorbutton="false"
           data-widget-editbutton="false"
@@ -104,7 +155,7 @@
           </div>
         </div>
       </article>
-      <article class="col-xs4 col-sm4 col-md4 col-lg-4">
+      <article class="col-xs6 col-sm6 col-md6 col-lg-6">
         <div class="jarviswidget jarviswidget-color-darken" id="wid-id-4" 
           data-widget-colorbutton="false"
           data-widget-editbutton="false"

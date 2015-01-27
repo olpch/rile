@@ -29,4 +29,21 @@ class enterpriseController extends Controller{
 		echo '<pre>';
 		die();
 	}
+
+	public function create(){
+		// echo '<pre>';
+		// print_r($_POST);
+		// echo '<pre>';
+		header('Content-Type: application/json');
+		echo json_encode($_POST);
+		die();	
+	}
+
+	public function update(){
+		echo '<pre>';
+		print_r($_POST);
+		echo '<pre>';
+		die();	
+	}
+
 }

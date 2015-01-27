@@ -38,10 +38,13 @@
 	$routes->get( '/estudiantes', 'student#index');
 	$routes->get( '/estudiantes/:id', 'student#show');
 	$routes->get( '/estudiantes/:id/edit', 'student#edit');
+	$routes->get( '/estudiantes/:id/test', 'student#test');
 
 
 	$routes->get( '/empresas', 'enterprise#index');
+	$routes->post('/empresas', 'enterprise#create');
 	$routes->get( '/empresas/:id/edit', 'enterprise#edit');
+	$routes->post('/empresas/:id', 'enterprise#update');
 	
 	$routes->get( '/contratos', 'contract#index');
 	$routes->get( '/contratos/:id', 'contract#show'); //,   true);

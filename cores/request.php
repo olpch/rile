@@ -9,10 +9,11 @@
 		
 		public function __construct(){
 			global $routes;
-			/*echo '<br/><pre>';
-			print_r($routes);
-			echo '</pre>';
-			die();*/
+			// echo '<br/><pre>';
+			// echo '<br/>Method: '.$_SERVER['REQUEST_METHOD'].'<br/>';
+			// print_r($routes);
+			// echo '</pre>';
+			// die();
 			$route = $routes->run();
 			if($route !== null){
 				$tmp = $route->controller();
@@ -31,6 +32,7 @@
 			}else{
 				echo '['.$route.']';
 				echo 'no encontro ruta ['.$_controller.']<br/>';
+				echo 'no encontro ruta ['.$_SERVER['REQUEST_METHOD'].']<br/>';
 				$this->_controller = 'error';
 				$this->_action = 'code404';
 			}
