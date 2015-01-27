@@ -80,6 +80,7 @@
 			height: 360px;
 			border: 1px solid #CCCCCC;
 			border-radius: 5px;
+			background-color: rgb(0, 107, 161);
 			
 		}
 
@@ -87,7 +88,7 @@
 			font-family: SEM;
 			font-size: 25px;
 			margin-top: 50px;
-			color: #F05A28;
+			color: #fff; /*#F05A28;*/
 			text-align: center;
 		}
 

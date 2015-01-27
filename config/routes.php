@@ -35,6 +35,10 @@
 	$routes->get( '/invoices', 'invoice#index');
 
 
+	$routes->get( '/alertas', 'alert#index');
+	$routes->get( '/alertas/fee', 'alert#fee');
+	
+
 	$routes->get( '/estudiantes', 'student#index');
 	$routes->get( '/estudiantes/:id', 'student#show');
 	$routes->get( '/estudiantes/:id/edit', 'student#edit');
