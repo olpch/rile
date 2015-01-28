@@ -45,6 +45,7 @@
 	$routes->get( '/estudiantes/:id/test', 'student#test');
 
 
+	$routes->get( '/empresas/registro', 'enterprise#register');
 	$routes->get( '/empresas', 'enterprise#index');
 	$routes->post('/empresas', 'enterprise#create');
 	$routes->get( '/empresas/:id/edit', 'enterprise#edit');

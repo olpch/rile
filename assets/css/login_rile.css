@@ -109,7 +109,7 @@
 		.letra #olvido {
 			font-family: RAL;
 			font-size: 14px;
-			color: #929497;
+			color: #fff;
 			text-decoration: none;
 
 		}
@@ -117,7 +117,7 @@
 		.letra #res {
 			font-family: RAL;
 			font-size: 14px;
-			color: #F05A28;
+			color: #fff;
 			margin-left: 85px;
 		}
 
@@ -126,9 +126,15 @@
 			height: 33px;
 			font-family: SEM;
 			font-size: 15px;
+			font-weight: bold;
 			border: none;
 			border-radius: 4px;
 			color: #fff;
 			background-color: #F6921E;
 			text-align: center;
+		}
+
+		.logo_register{
+			max-width: 400px;
+			margin: 10px;
 		}

@@ -21,13 +21,8 @@ class enterpriseController extends Controller{
 		die();
 	}
 
-	public function index2(){
-		// Session::access(1);
-		$this->_view->enterprises = $this->enterprises->all();
-		echo '<pre>';
-		print_r($this->_view->enterprises);
-		echo '<pre>';
-		die();
+	public function register(){
+		$this->_view->renderContent();
 	}
 
 	public function create(){

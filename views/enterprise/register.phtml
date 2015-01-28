@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RILE - Ruta de Inserción Laboral Exitosa</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<?php
+		$this->getCSS('bootstrap.min'); 
+		$this->getCSS('font-awesome.min');
+		$this->getCSS('smartadmin-production.min');
+		$this->getCSS('login_rile');
+		$this->getFavicon();
+	?>
+
+</head>
+    <style>
+        .edgeLoad-EDGE-2579157 { visibility:hidden; }
+    </style>
+<body>
+
+<div class="contenido_ini">
+	<div class="contenido" style="left: 35%;position: fixed;">
+		<div class="inicio" style="height: 460px;background-color: #FFF;">
+			<img src="/RILE/assets/img/rile/rile-03.png" class="logo_register"/>
+			<form action="" id="checkout-form" class="smart-form" novalidate="novalidate">
+				<header>Registro de Empresa</header>
+                <fieldset>
+					<div class="row">
+						<article class="col col-6">
+							<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
+								<input type="text" name="e_id" placeholder="NIT">
+							</label>
+						</article>
+					</div>
+					<article>
+						<label class="input"> <i class="icon-prepend fa fa-building"></i>
+							<input type="text" name="e_id" placeholder="Rozon Social">
+						</label>
+					</article>
+					<article>
+						<label class="input"> <i class="icon-prepend fa fa-map-marker"></i>
+							<input type="text" name="e_address" placeholder="Rozon Social">
+						</label>
+					</article>
+					</fieldset>
+					<header>Contacto</header>
+                	<fieldset>
+					<div class="row">
+						<article class="col col-6">
+							<label class="input"> <i class="icon-prepend fa fa-user"></i>
+								<input type="text" name="e_name" placeholder="Nombre">
+							</label>
+						</article>
+					</div>
+					<article>
+						<label class="input"> <i class="icon-prepend fa fa-phone"></i>
+							<input type="text" name="e_phone" placeholder="Telefono">
+						</label>
+					</article>
+					<article>
+						<label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
+							<input type="text" name="e_mail" placeholder="Correo electronico">
+						</label>
+					</article>
+					<div style="height: 15px; width: 100%;" />
+				</fieldset>
+				<footer>
+                    <button type="submit" class="btn btn-primary">Crear</button>
+                    <button type="submit" class="btn btn-default">Cancelar</button>
+                </footer>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script>
+   var $checkoutForm = $('#checkout-form').validate({
+    // Rules for form validation
+      rules : {
+        emp_nit : { required : true, digits : true },
+        emp_name : { required : true },
+        emp_address : { required : true },
+        emp_contact : { required : true },
+        emp_phone : { required : true },
+        emp_mail : { required : true, email : true }
+      },
+  
+      // Messages for form validation
+      messages : {
+        emp_nit : {
+          required : 'El nombre es requerido.',
+          digits : 'Es permitido solo numeros.'
+        },
+        emp_name : {
+          required : 'El apellido es requrido.'
+        },
+        emp_address : {
+          required : 'La direecion es requerida.'
+        },
+        emp_name : {
+          required : 'Le razon social es requerida'
+        },
+        emp_phone : {
+          required : 'El numero telefonico es requerido.'
+        },
+        emp_mail : {
+          required : 'El email es requerido.',
+          email : 'Formato de email desconocido.'
+        }
+      },
+  
+      // Do not change code below
+      errorPlacement : function(error, element) {
+        error.insertAfter(element.parent());
+      }
+    });
+
+
+  };
+</script>
+</body>
+</html>
