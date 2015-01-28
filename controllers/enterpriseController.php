@@ -34,9 +34,9 @@ class enterpriseController extends Controller{
 		// echo '<pre>';
 		// print_r($_POST);
 		// echo '<pre>';
-		header('Content-Type: application/json');
+		/*header('Content-Type: application/json');
 		echo json_encode($_POST);
-		die();	
+		die();	*/
 	}
 
 	public function update(){

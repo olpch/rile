@@ -19,6 +19,6 @@ define('APP_COMPANY', 'www.blackcore.com');
 //Database
 define('DB_HOST','localhost');
 define('DB_USER','root');
-define('DB_PASS','123456');
+define('DB_PASS','');
 define('DB_NAME','practica_bd');
 define('DB_CHAR','utf8');

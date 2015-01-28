@@ -60,6 +60,10 @@
 
 	$routes->get( '/configuracion', 'config#index');
 	$routes->get( '/convenio/nuevo', 'config#newConvention');
+	
+
+	$routes->get( '/solicitudes', 'request#index');
+	$routes->get( '/solicitudes/nuevo', 'request#create');
 
 
 
