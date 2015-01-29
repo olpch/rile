@@ -5,7 +5,10 @@ class developController extends Controller{
 		parent::__construct($name, $action);
 	}
 
-	public function index(){;}
+	public function index(){
+		$this->_view->pass = Hash::get('sha1', '123456', HASH_KEY);
+		$this->_view->renderContent();
+	}
 
 	public function routes(){
 		global $routes;
@@ -27,6 +30,6 @@ class developController extends Controller{
 
 	public function test(){
 		$this->_view->mnuTab = 'invoices';
-		$this->_view->renderView();
+		$this->_view->rendercontent();
 	}
 }

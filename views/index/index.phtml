@@ -39,7 +39,11 @@
 
   <div class="project-context hidden-xs">
     <span class="label">Usuario:</span>
-    <span class="project-selector dropdown-toggle" data-toggle="dropdown">Omar Lee Paba Ching <i class="fa fa-angle-down"></i></span>
+    <span class="project-selector dropdown-toggle" data-toggle="dropdown">
+    <?php
+      echo strtoupper(Session::get('User'));
+    ?>
+    <i class="fa fa-angle-down"></i></span>
     <ul class="dropdown-menu">
       <li>
         <a href="javascript:void(0);">Online e-merchant management system - attaching integration with the iOS</a>

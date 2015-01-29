@@ -25,6 +25,10 @@ class enterpriseController extends Controller{
 		$this->_view->renderContent();
 	}
 
+	public function profile(){
+		$this->_view->renderContent();
+	}
+
 	public function create(){
 		// echo '<pre>';
 		// print_r($_POST);

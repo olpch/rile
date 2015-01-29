@@ -43,9 +43,11 @@
 	$routes->get( '/estudiantes/:id', 'student#show');
 	$routes->get( '/estudiantes/:id/edit', 'student#edit');
 	$routes->get( '/estudiantes/:id/test', 'student#test');
+	$routes->get( '/estudiantes/profile', 'student#profile');
 
 
 	$routes->get( '/empresas/registro', 'enterprise#register');
+	$routes->get( '/empresas/profile', 'enterprise#profile');
 	$routes->get( '/empresas', 'enterprise#index');
 	$routes->post('/empresas', 'enterprise#create');
 	$routes->get( '/empresas/:id/edit', 'enterprise#edit');
@@ -87,5 +89,6 @@
 
 
 	// Developed routes (HTML)
+	$routes->get('/develop' , 'develop#index');
 	$routes->get('/test' , 'develop#test');
 	$routes->get('/rake/routes', 'develop#routes');

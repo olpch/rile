@@ -50,18 +50,20 @@
 	</div>
 	<div class="contenido">
 		<div class="inicio">
-			<p>Inicio de Sesión</p>
-			<div style="text-align: center">
-				<input type="text" id="x_usuario" name="x_usuario" placeholder="Usuario o Email">
-				<input type="password" id="x_clave" name="x_clave" placeholder="Contraseña" onkeypress="if (event.keyCode == 13) iniciar_sesion()">
-			</div>
-			<div class="letra">
-					<a id="olvido" href="olvidar.php">¿Olvidaste la contraseña?</a>
-					<a id="res" href="empresas/">Registrese Aqui</a>
-			</div>
-			<div style="text-align: center; margin-top: 30px">
-				<input type="button" class="ingresar" onClick="javascript: iniciar_sesion();" id="btn" value="Ingresar a la Plataforma">
-			</div>
+			<form method="POST" action="#">
+				<p>Inicio de Sesión</p>
+				<div style="text-align: center">
+					<input type="text" id="x_usuario" name="x_usuario" placeholder="Usuario o Email">
+					<input type="password" id="x_clave" name="x_clave" placeholder="Contraseña" onkeypress="if (event.keyCode == 13) iniciar_sesion()">
+				</div>
+				<center style="margin-top: 15px" >
+					<a id="olvido" href="recuperar" style="color: #fff">¿Olvidaste la contraseña?</a><br/>
+					<a id="res" href="empresas/registro" style="color: #fff">Registrese su Empresa Aqui</a>
+				</center>
+				<div style="text-align: center; margin-top: 15px">
+					<input type="submit" class="ingresar" id="btn" value="Ingresar a la Plataforma">
+				</div>
+			</form>
 		</div>
 		<div style="text-align: center; margin-top: 15px">
 			<img src="assets/img/rile/acc-03.png">

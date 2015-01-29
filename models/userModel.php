@@ -54,13 +54,19 @@ class UserModel extends Model{
 
 	public function signin($key, $opsw){
 		$hash = Hash::get('sha1', $opsw, HASH_KEY);
-		$c  = 'SELECT u.id, u.uid, u.level, u.first_name, u.last_name FROM users u ';
-		$c .= "WHERE ( u.uid LIKE :key "; 
-		$c .= "OR UPPER(u.email) LIKE UPPER(:key) ) ";
-		$c .= "AND opsw like :opsw";
+		$c  = 'SELECT u.u_id id, u.u_usuario usuario, u.u_tipo_id tipo, u.u_level level, u.u_nombres nombres, u.u_apellidos apellidos, u.u_mail email ';
+		$c .= 'FROM usuarios u ';
+		$c .= "WHERE ( u.u_usuario LIKE :key "; 
+		$c .= "OR UPPER(u.u_mail) LIKE UPPER(:key) ) ";
+		$c .= "AND u.u_password like :opsw";
 		$query = $this->_db->prepare($c);
 		$query->execute(array(':key' => $key,':opsw' => $hash));
 		$res = $query->fetch();
+		// echo '<br/>Pass => ['.$key.']['.$opsw.']['.$c.']';
+		// echo '<br/><pre>';
+		// print_r($res);
+		// echo '<pre>';
+		// 	die();
 		return $res;
 	}
 }

@@ -3,21 +3,26 @@ class loginController extends Controller{
 
 	public function __construct($name, $action){
 		parent::__construct($name, $action);
-		$this->current_user = $this->loadModel('user');
+		$this->users = $this->loadModel('user');
 	}
 
 	public function index(){
 		if(Session::authenticated()){
-			header('location: '.BASE_URL.'dashboard');	
+			header('location: '.BASE_URL.'#dashboard');	
 		}
-		if(isset($_POST['idcc'])){
-			$checklogin = $this->current_user->signin($_POST['idcc'], $_POST['opsw']);
+		if(isset($_POST['x_usuario'])){
+			$checklogin = $this->users->signin($_POST['x_usuario'], $_POST['x_clave']);
+			// echo '<br/><pre>';
+			// print_r($checklogin);
+			// echo '<pre>';
+			// die();
 			if($checklogin){
 				Session::register(true);
 				Session::set('level', $checklogin['level']);
-				Session::set('User', $checklogin['first_name'].' '. $checklogin['last_name']);
+				Session::set('tipo', $checklogin['tipo']);
+				Session::set('User', $checklogin['nombres'].' '. $checklogin['apellidos']);
 				Session::set('time', time());
-				$this->redirectTo('dashboard');
+				$this->redirectTo('#dashboard');
 			}else{
 				$this->msgError  = "Datos no coinciden, por favor verifique.";
 			}

@@ -48,12 +48,12 @@
 		}
 		
 		public static function getLevel($level){
-			$levels['Olee']   = 6;
+			$levels['Creator']= 6;
 			$levels['Root']   = 5;
-			$levels['Support']= 4;
-			$levels['Admin']  = 3;
-			$levels['Special']= 2;
-			$levels['User']   = 1;
+			$levels['Auditor']= 4;
+			$levels['Support']= 3;
+			$levels['Admin']  = 2;
+			$levels['Student']= 1;
 			$levels['Basic']  = 0;
 			if (!array_key_exists($level, $levels)){
 				throw new Exception('['.$level.'] Error de Acceso.');

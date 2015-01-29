@@ -42,6 +42,9 @@ class studentController extends Controller{
 		$this->_view->renderContent();
 	}
 
+	public function profile(){
+		$this->_view->renderContent();
+	}
 	public function test($id){
 		// Session::access(1);
 		//$this->_view->student = $this->students->find($id);
