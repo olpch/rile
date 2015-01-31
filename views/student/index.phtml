@@ -33,39 +33,39 @@
                 <?php 
                   foreach($this->students as $student){
                     echo '<tr>';
-                    echo '<td>'.$student['e_identificacion'].'</td>';
-                    echo '<td>'.strtoupper($student['nombre']).'</td>';
-                    echo '<td>'.$student['convenio'].'</td>';
-                    echo '<td>'.$student['programa'].'</td>';
-                    echo '<td>';
-                    if ($student['asp_apt'] === 'Apto'){
-                      echo '<span class="label label-success">Apto</span>';
-                    }else{
-                      if($student['asp_apt'] === 'Sena'){
-                        echo '<span class="label label-primary">Sena</span>';
+                      echo '<td>'.$student['e_identificacion'].'</td>';
+                      echo '<td>'.strtoupper($student['nombre']).'</td>';
+                      echo '<td>'.$student['convenio'].'</td>';
+                      echo '<td>'.$student['programa'].'</td>';
+                      echo '<td>';
+                      if ($student['asp_apt'] === 'Apto'){
+                        echo '<span class="label label-success">Apto</span>';
                       }else{
-                        echo '<span class="label label-danger">No Apto</span>';
+                        if($student['asp_apt'] === 'Sena'){
+                          echo '<span class="label label-primary">Sena</span>';
+                        }else{
+                          echo '<span class="label label-danger">No Apto</span>';
+                        }
                       }
-                    }
-                    echo '</td>';
-                    echo '<td><center>';
-                    if($student['e_genero'] == 1){
-                      echo '<i class="fa fa-male" style="color: blue"></i><span style="display: none;">femenino</span>'  ;
-                    }else{
-                      echo  '<i class="fa fa-female" style="color: pink"></i><span style="display: none;">masculino</span>';
-                    }
-                    echo '</center></td>';
-                    echo '<td>';
-                       echo '<a href="/RILE/estudiantes/'.$student['e_id'].'" data-toggle="modal" ';
-                       echo 'data-target="#newContract" class="btn btn-default btn-xs">';
-                       echo 'Mostar</a>';
-                       echo '<a href="/RILE/estudiantes/'.$student['e_id'].'/edit" data-toggle="modal" ';
-                       echo 'data-target="#newContract" class="btn btn-default btn-xs">';
-                       echo 'Editar</a>';
-                       echo '<a href="/RILE/estudiantes/'.$student['e_id'].'/test" data-toggle="modal" ';
-                       echo 'data-target="#newContract" class="btn btn-default btn-xs">';
-                       echo 'Evaluar</a>';
-                       echo '</td>';
+                      echo '</td>';
+                      echo '<td><center>';
+                      if($student['e_genero'] == 1){
+                        echo '<i class="fa fa-male" style="color: blue"></i><span style="display: none;">femenino</span>'  ;
+                      }else{
+                        echo  '<i class="fa fa-female" style="color: pink"></i><span style="display: none;">masculino</span>';
+                      }
+                      echo '</center></td>';
+                      echo '<td>';
+                         echo '<a href="/RILE/estudiantes/'.$student['e_id'].'" data-toggle="modal" ';
+                         echo 'data-target="#mdlStudent" class="btn btn-default btn-xs">';
+                         echo 'Mostar</a>';
+                         echo '<a href="/RILE/estudiantes/'.$student['e_id'].'/edit" data-toggle="modal" ';
+                         echo 'data-target="#mdlStudent" class="btn btn-default btn-xs">';
+                         echo 'Editar</a>';
+                         echo '<a href="/RILE/estudiantes/'.$student['e_id'].'/test" data-toggle="modal" ';
+                         echo 'data-target="#evaluar" class="btn btn-default btn-xs">';
+                         echo 'Evaluar</a>';
+                      echo '</td>';
                     echo '</tr>';
                   }
                 ?>
@@ -74,12 +74,16 @@
 
           </div>
 
-<div class="modal fade" id="newContract" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true">  
-     <div class="modal-dialog">  
-         <div class="modal-content">
-            
-         </div>  
-     </div>  
+          <div class="modal fade" id="mdlStudent" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true">  
+            <div class="modal-dialog modal-lg">  
+              <div class="modal-content"></div>
+            </div>
+         </div>
+         <div class="modal fade" id="evaluar" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true">  
+            <div class="modal-dialog">  
+              <div class="modal-content"></div>  
+            </div>
+         </div>
  </div>
               <!-- end widget content -->
               
