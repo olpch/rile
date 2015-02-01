@@ -1,349 +1,406 @@
 <section id="widget-grid" class="">
+    
     <div class="row">
       <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
         <h1 class="page-title txt-color-blueDark">
-          <i class="fa-fw fa fa-cogs"></i> Configuración del sistema</h1>
+          <i class="fa-fw fa fa-bell"></i> Alertas del sistema</h1>
       </div>
     </div>
-      
-    <div class="row">
-      <article class="col-xs6 col-sm6 col-md6 col-lg-6">
-        <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0"
-	        data-widget-colorbutton="false"
-	        data-widget-editbutton="false"
-	        data-widget-deletebutton="false"
-            >
-            <header>
-            	<span class="widget-icon"> <i class="fa fa-mortar-board"></i> </span>
-                <h2>Finalización Etapa Electiva</h2>        
-            </header>
-            <div>
-				<div class="jarviswidget-editbox"></div>
-                <div class="widget-body no-padding">
-                  <form action="" id="checkout-form" class="smart-form" novalidate="novalidate">
-                      <header>
-                        SMLV "Salario Minimo Legal Vigente"
-                      </header>
-                      <fieldset>
-                        <section>
-                          <label class="input">
-                            <input type="text" name="opsw" placeholder="Contraseña">
-                          </label>
-                        </section>
-                        <section>
-                          <button class="btn btn-default btn-xs">Actualizar</button>
-                        </section>
-                      </fieldset>
-                  </form>
-                </div>
-              </div>
-            </div> 
-          </article>
 
-          <article class="col-xs6 col-sm6 col-md6 col-lg-6">
-          <div class="jarviswidget jarviswidget-color-darken" id="wid-id-2" data-widget-editbutton="false">
-            <header>
-              <span class="widget-icon"> <i class="glyphicon glyphicon-user"></i> </span>
-                <h2>Finalización Etapa Productiva</h2>        
-            </header>
-            <div>
-              <div class="jarviswidget-editbox"></div>
-              <div class="widget-body no-padding">
-                <form action="" id="checkout-form" class="smart-form" novalidate="novalidate">
-                    <header>
-                      Cambio de Contraseña
-                    </header>
-                    <fieldset>
-                      <section>
-                        <label class="input">
-                          <input type="text" name="opsw" placeholder="Contraseña">
-                        </label>
-                      </section>
-            
-                      <section>
-                        <label class="input">
-                          <input type="text" name="razon" placeholder="Nueva Contraseña">
-                        </label>
-                      </section>
-                      <section>
-                          <label class="input">
-                            <input type="text" name="address" placeholder="Confirmar Contraseña">
-                          </label>
-                        </section>
-                      <section>
-                        <button class="btn btn-default btn-xs">Actualizar</button>
-                      </section>
-                    </fieldset>
-                </form>
-              </div>
+    <!-- Listado de Alertas a 60 dias -->
+    <div class="row">
+      <article class="col-xs12 col-sm12 col-md12 col-lg-12">
+        <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0"
+          data-widget-colorbutton="false"
+          data-widget-editbutton="false"
+          data-widget-deletebutton="false">
+          <header>
+            <span class="widget-icon"> 
+              <i class="fa fa-bell"></i> 
+            </span>
+            <h2>Finalización a 60 dias</h2>        
+          </header>
+          <div>
+            <div class="jarviswidget-editbox"></div>
+            <div class="widget-body no-padding">
+              <table id="dt_sesenta" class="table table-striped table-bordered table-hover" width="100%">
+                <thead>                     
+                  <tr>
+                    <th>Fecha Fin</th>
+                    <th>Fecha Inicio</th>
+                    <th data-class="expand">Contrato</th>                  
+                    <th data-class="expand">Estudiante</th>
+                    <th>Empresa</th>
+                    <th>Tipo de Contrato</th>
+                    <th data-hide="phone,tablet">Enviar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php 
+                    foreach($this->sesenta as $alrt){
+                      echo '<tr>';
+                      echo '<td>'.$alrt['co_fecha_fin'].'</td>';
+                      echo '<td>'.$alrt['co_fecha_ini'].'</td>';
+                      echo '<td>'.$alrt['e_identificacion'].'</td>';
+                      echo '<td>'.strtolower($alrt['estudiante']).'</td>';
+                      echo '<td>'.strtolower($alrt['e_razon_social']).'</td>';
+                      echo '<td>'.strtolower($alrt['tpc_nom']).'</td>';
+                      echo '<td>';
+                      echo '<Button class="btn btn-default btn-xs">';
+                      echo 'Mail</Button>';
+                      echo '</td>';
+                      echo '</tr>';
+                    }
+                  ?>
+                </tbody>
+              </table>
             </div>
           </div>
-        </article>
-      </div>
+        </div>
+      </article>  
+    </div> <!-- Cierre de la primara row -->
+
+    <!-- Listado de Alertas Finalización etapa lectiva -->
+    <div class="row">
+      <article class="col-xs12 col-sm12 col-md12 col-lg-12">
+        <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1"
+          data-widget-colorbutton="false"
+          data-widget-editbutton="false"
+          data-widget-deletebutton="false">
+          <header>
+          <span class="widget-icon"> 
+            <i class="fa fa-bell"></i> 
+          </span>
+            <h2>Finalización Etapa Lectiva</h2>        
+          </header>
+          <div>
+            <div class="jarviswidget-editbox"></div>
+            <div class="widget-body no-padding">
+              <table id="dt_lectiva" class="table table-striped table-bordered table-hover" width="100%">
+                <thead>                     
+                  <tr>
+                    <th>Fecha Fin</th>
+                    <th>Fecha Inicio</th>
+                    <th data-class="expand">Contrato</th>                  
+                    <th data-class="expand">Estudiante</th>
+                    <th>Empresa</th>
+                    <th>Tipo de Contrato</th>
+                    <th data-hide="phone,tablet">Enviar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php 
+                    foreach($this->lectivas as $alrt){
+                      echo '<tr>';
+                      echo '<td>'.$alrt['e_fecha_fin'].'</td>';
+                      echo '<td>'.$alrt['e_identificacion'].'</td>';
+                      /*echo '<td>'.strtolower($alrt['estudiante']).'</td>';
+                      echo '<td>'.strtolower($alrt['e_razon_social']).'</td>';
+                      echo '<td>'.strtolower($alrt['tpc_nom']).'</td>';*/
+                      echo '<td>';
+                      echo '<Button class="btn btn-default btn-xs">';
+                      echo 'Mail</Button>';
+                      echo '</td>';
+                      echo '</tr>';
+                    }
+                  ?>
+                </tbody>
+              </table>                
+            </div>
+          </div>
+        </div>
       </article>
     </div>
-    </article>
 
-
+    <!-- Listado de Alertas Finalización etapa Productiva -->
     <div class="row">
-      
-       <article class="col-xs6 col-sm6 col-md6 col-lg-6">
+      <article class="col-xs12 col-sm12 col-md12 col-lg-12">
+        <div class="jarviswidget jarviswidget-color-darken" id="wid-id-2"
+          data-widget-colorbutton="false"
+          data-widget-editbutton="false"
+          data-widget-deletebutton="false">
+          <header>
+          <span class="widget-icon"> 
+            <i class="fa fa-bell"></i> 
+          </span>
+            <h2>Finalización Etapa Productiva</h2>        
+          </header>
+          <div>
+            <div class="jarviswidget-editbox"></div>
+            <div class="widget-body no-padding">
+              <table id="dt_productiva" class="table table-striped table-bordered table-hover" width="100%">
+                <thead>                     
+                  <tr>
+                    <th>Fecha Fin</th>
+                    <th>Fecha Inicio</th>
+                    <th data-class="expand">Contrato</th>                  
+                    <th data-class="expand">Estudiante</th>
+                    <th>Empresa</th>
+                    <th>Tipo de Contrato</th>
+                    <th data-hide="phone,tablet">Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php 
+                    foreach($this->productivas as $alrt){
+                      echo '<tr>';
+                      echo '<td>'.$alrt['co_fecha_fin'].'</td>';
+                      echo '<td>'.$alrt['co_fecha_ini'].'</td>';
+                      echo '<td>'.$alrt['e_identificacion'].'</td>';
+                      echo '<td>'.strtolower($alrt['estudiante']).'</td>';
+                      echo '<td>'.strtolower($alrt['e_razon_social']).'</td>';
+                      echo '<td>'.strtolower($alrt['tpc_nom']).'</td>';
+                      echo '<td><span class="badge bg-color-orange">por vencer</span></td>';
+                      echo '</tr>';
+                    }
+                  ?>
+                </tbody>
+              </table>                
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Listado de Alertas Etapas Productivas Vencidas -->
+    <div class="row">
+      <article class="col-xs12 col-sm12 col-md12 col-lg-12">
         <div class="jarviswidget jarviswidget-color-darken" id="wid-id-3" 
           data-widget-colorbutton="false"
           data-widget-editbutton="false"
-          data-widget-togglebutton="false"
-          data-widget-deletebutton="false"
-          data-widget-fullscreenbutton="false"
-          data-widget-custombutton="false"
-        >
+          data-widget-deletebutton="false">
           <header>
-            <span class="widget-icon"> <i class="glyphicon glyphicon-user"></i> </span>
+            <span class="widget-icon"> <i class="fa fa-bell"></i> </span>
               <h2>Etapas Productivas Vencidas</h2>        
           </header>
           <div>
             <div class="jarviswidget-editbox"></div>
             <div class="widget-body">
-              <div class="alert alert-danger alert-block">
-                No Disponible para su nivel de usuario
-              </div>
+              <table id="dt_vencidas" class="table table-striped table-bordered table-hover" width="100%">
+              <thead>                     
+                <tr>
+                  <th>Fecha Fin</th>
+                  <th>Fecha Inicio</th>
+                  <th data-class="expand">Contrato</th>                  
+                  <th data-class="expand">Estudiante</th>
+                  <th>Empresa</th>
+                  <th>Tp Contrato</th>
+                  <th>Estado</th>
+                  <!-- <th data-hide="phone,tablet">Enviar</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <?php 
+                  foreach($this->vencidas as $alrt){
+                    echo '<tr>';
+                    echo '<td>'.$alrt['co_fecha_fin'].'</td>';
+                    echo '<td>'.$alrt['co_fecha_ini'].'</td>';
+                    echo '<td>'.$alrt['e_identificacion'].'</td>';
+                    echo '<td>'.strtolower($alrt['estudiante']).'</td>';
+                    echo '<td>'.strtolower($alrt['e_razon_social']).'</td>';
+                    echo '<td>'.strtolower($alrt['tpc_nom']).'</td>';
+                    echo '<td><span class="badge bg-color-red">vencida</span></td>';
+                    echo '</tr>';
+                  }
+                ?>
+              </tbody>
+            </table>
             </div>
           </div>
         </div>
       </article>
-      <article class="col-xs6 col-sm6 col-md6 col-lg-6">
+    </div>
+
+    <!-- Listado de Alertas Entrevistados -->
+    <div class="row">
+      <article class="col-xs12 col-sm12 col-md12 col-lg-12">
         <div class="jarviswidget jarviswidget-color-darken" id="wid-id-4" 
           data-widget-colorbutton="false"
           data-widget-editbutton="false"
-          data-widget-togglebutton="false"
-          data-widget-deletebutton="false"
-          data-widget-fullscreenbutton="false"
-          data-widget-custombutton="false"
-        >
-          <header>
-            <span class="widget-icon"> <i class="glyphicon glyphicon-user"></i> </span>
-              <h2>Entrevistados</h2>        
-          </header>
-          <div>
-            <div class="jarviswidget-editbox"></div>
-            <div class="widget-body">
-              <div class="alert alert-danger alert-block">
-                No Disponible para su nivel de usuario
-              </div>
-              
-            </div>
+          data-widget-deletebutton="false">
+        <header>
+          <span class="widget-icon"> <i class="fa fa-bell"></i> </span>
+            <h2>Entrevistados</h2>        
+        </header>
+        <div>
+          <div class="jarviswidget-editbox"></div>
+          <div class="widget-body">
+            <table id="dt_entrevistados" class="table table-striped table-bordered table-hover" width="100%">
+              <thead>                     
+                <tr>
+                  <th data-class="expand">Identificación</th>                  
+                  <th data-class="expand">Estudiante</th>
+                  <th>Programa</th>
+                  <th>Empresa</th>
+                  <th>Observación</th>
+                  <th>Motivo</th>
+                  <!-- <th data-hide="phone,tablet">Enviar</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <?php 
+                  foreach($this->entrevistados as $alrt){
+                    echo '<tr>';
+                    echo '<td>'.$alrt['e_identificacion'].'</td>';
+                    echo '<td>'.strtolower($alrt['estudiante']).'</td>';
+                    echo '<td>'.strtolower($alrt['p_nombre']).'</td>';
+                    echo '<td>'.strtolower($alrt['e_razon_social']).'</td>';
+                    echo '<td>'.strtolower($alrt['sel_obser']).'</td>';
+                    echo '<td>'.strtolower($alrt['mot_nom']).'</td>';
+                    echo '</tr>';
+                  }
+                ?>
+              </tbody>
+            </table>
           </div>
         </div>
       </article>
     </div>
 
-    <div class="row">
-        
-        <article class="col-xs6 col-sm6 col-md6 col-lg-6">
-          
-          <div class="jarviswidget jarviswidget-color-darken" id="wid-id-5"
-            data-widget-colorbutton="false"
-          data-widget-editbutton="false"
-          data-widget-deletebutton="false"
-          >
-            <header>
-              <span class="widget-icon"> <i class="fa fa-mortar-board"></i> </span>
-              <h2>Finalización a 60 dias</h2>        
-            </header>
-            <div><div class="jarviswidget-editbox"></div>
-            <div class="widget-body no-padding">
-              <table id="dt_programs" class="table table-striped table-bordered table-hover" width="100%">
-                <thead>                     
-                  <tr>
-                    <th data-class="expand">Nombre</th>
-                    <th data-hide="phone,tablet">Acción</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php 
-                    foreach($this->programs as $program){
-                      echo '<tr>';
-                      echo '<td>'.strtolower($program['p_nombre']).'</td>';
-                      echo '<td>';
-                      echo '<a href="/RILE/estudiantes/'.$program['p_id'].'" data-toggle="modal" ';
-                      echo 'data-target="#newContract" class="btn btn-default btn-xs">';
-                      echo 'Mostar</a>';
-                      echo '</td>';
-                      echo '</tr>';
-                    }
-                  ?>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="modal fade" id="newContract" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true">  
-              <div class="modal-dialog">  
-                <div class="modal-content">            
-                </div>  
-              </div>  
-            </div>
-              
-          </div>
-        </div>
-
-      </article>
-        
-
-      <article class="col-xs6 col-sm6 col-md6 col-lg-6">
-          
-          <div class="jarviswidget jarviswidget-color-darken" id="wid-id-6" 
-          data-widget-colorbutton="false"
-          data-widget-editbutton="false"
-          data-widget-deletebutton="false"
-          >
-            <header>
-              <span class="widget-icon"> <i class="fa fa-cubes"></i> </span>
-              <h2>Modulos</h2>        
-            </header>
-            <div><div class="jarviswidget-editbox"></div>
-            <div class="widget-body no-padding">
-              <table id="dt_modules" class="table table-striped table-bordered table-hover" width="100%">
-                <thead>                     
-                  <tr>
-                    <th data-class="expand">Nombre</th>
-                    <th data-hide="phone,tablet">Acción</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php 
-                    foreach($this->modules as $module){
-                      echo '<tr>';
-                      echo '<td>'.strtolower($module['mod_des']).'</td>';
-                      echo '<td>';
-                      echo '<a href="/RILE/estudiantes/'.$module['mod_cod'].'" data-toggle="modal" ';
-                      echo 'data-target="#newContract" class="btn btn-default btn-xs">';
-                      echo 'Mostar</a>';
-                      echo '</td>';
-                      echo '</tr>';
-                    }
-                  ?>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="modal fade" id="newContract" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true">  
-              <div class="modal-dialog">  
-                <div class="modal-content">            
-                </div>  
-              </div>  
-            </div>
-              
-          </div>
-        </div>
-
-      </article>
-    
-    </div>
   </section>
-  <div class="modal fade" id="newmodel" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"></div></div></div>
+
+  <div class="modal fade" id="newmodel" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content"></div>
+    </div>
+  </div>
 
   <script type="text/javascript">
-      pageSetUp();
+    pageSetUp();
 
-      var pagefunction = function() {
-        var responsiveHelper_dt_basic = undefined;
-        var responsiveHelper_datatable_fixed_column = undefined;
-        var responsiveHelper_datatable_col_reorder = undefined;
-        var responsiveHelper_datatable_tabletools = undefined;
-      
-        var breakpointDefinition = {
-          tablet : 1024,
-          phone : 480
-        };
+    var pagefunction = function() {
+    var responsiveHelper_dt_basic = undefined;
+    var responsiveHelper_datatable_fixed_column = undefined;
+    var responsiveHelper_datatable_col_reorder = undefined;
+    var responsiveHelper_datatable_tabletools = undefined;
+  
+    var breakpointDefinition = { tablet : 1024, phone : 480 };
 
-      $('#dt_conventions').dataTable({
-        "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>"+
-          "t"+
-          "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
-        "autoWidth" : true,
-        "preDrawCallback" : function() {
-          // Initialize the responsive datatables helper once.
-          if (!responsiveHelper_dt_basic) {
-            responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_conventions'), breakpointDefinition);
-          }
-        },
-        "rowCallback" : function(nRow) {
-          responsiveHelper_dt_basic.createExpandIcon(nRow);
-        },
-        "drawCallback" : function(oSettings) {
-          responsiveHelper_dt_basic.respond();
-        }
-      });
-      $('#dt_programs').dataTable({
-        "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>"+
-          "t"+
-          "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
-        "autoWidth" : true,
-        "preDrawCallback" : function() {
-          // Initialize the responsive datatables helper once.
-          if (!responsiveHelper_dt_basic) {
-            responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_programs'), breakpointDefinition);
-          }
-        },
-        "rowCallback" : function(nRow) {
-          responsiveHelper_dt_basic.createExpandIcon(nRow);
-        },
-        "drawCallback" : function(oSettings) {
-          responsiveHelper_dt_basic.respond();
-        }
-      });
-
-       $('#dt_modules').dataTable({
-        "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>"+
-          "t"+
-          "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
-        "autoWidth" : true,
-        "preDrawCallback" : function() {
-          // Initialize the responsive datatables helper once.
-          if (!responsiveHelper_dt_basic) {
-            responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_modules'), breakpointDefinition);
-          }
-        },
-        "rowCallback" : function(nRow) {
-          responsiveHelper_dt_basic.createExpandIcon(nRow);
-        },
-        "drawCallback" : function(oSettings) {
-          responsiveHelper_dt_basic.respond();
-        }
-      });
-
-    
-        
-    
-    /* COLUMN SHOW - HIDE */
-    $('#datatable_col_reorder').dataTable({
-      "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'C>r>"+
-          "t"+
-          "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-sm-6 col-xs-12'p>>",
+    $('#dt_sesenta').dataTable({
+      "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>"+
+        "t"+
+        "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
       "autoWidth" : true,
       "preDrawCallback" : function() {
         // Initialize the responsive datatables helper once.
-        if (!responsiveHelper_datatable_col_reorder) {
-          responsiveHelper_datatable_col_reorder = new ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
+        if (!responsiveHelper_dt_basic) {
+          responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_sesenta'), breakpointDefinition);
         }
       },
       "rowCallback" : function(nRow) {
-        responsiveHelper_datatable_col_reorder.createExpandIcon(nRow);
+        responsiveHelper_dt_basic.createExpandIcon(nRow);
       },
       "drawCallback" : function(oSettings) {
-        responsiveHelper_datatable_col_reorder.respond();
-      }     
+        responsiveHelper_dt_basic.respond();
+      }
+    });
+
+
+    $('#dt_lectiva').dataTable({
+      "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>"+
+        "t"+
+        "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+      "autoWidth" : true,
+      "preDrawCallback" : function() {
+        // Initialize the responsive datatables helper once.
+        if (!responsiveHelper_dt_basic) {
+          responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_lectiva'), breakpointDefinition);
+        }
+      },
+      "rowCallback" : function(nRow) {
+        responsiveHelper_dt_basic.createExpandIcon(nRow);
+      },
+      "drawCallback" : function(oSettings) {
+        responsiveHelper_dt_basic.respond();
+      }
+    });
+
+    $('#dt_productiva').dataTable({
+      "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>"+
+        "t"+
+        "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+      "autoWidth" : true,
+      "preDrawCallback" : function() {
+        // Initialize the responsive datatables helper once.
+        if (!responsiveHelper_dt_basic) {
+          responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_productiva'), breakpointDefinition);
+        }
+      },
+      "rowCallback" : function(nRow) {
+        responsiveHelper_dt_basic.createExpandIcon(nRow);
+      },
+      "drawCallback" : function(oSettings) {
+        responsiveHelper_dt_basic.respond();
+      }
+    });
+
+    $('#dt_vencidas').dataTable({
+      "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>"+
+        "t"+
+        "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+      "autoWidth" : true,
+      "preDrawCallback" : function() {
+        // Initialize the responsive datatables helper once.
+        if (!responsiveHelper_dt_basic) {
+          responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_dt_vencidas'), breakpointDefinition);
+        }
+      },
+      "rowCallback" : function(nRow) {
+        responsiveHelper_dt_basic.createExpandIcon(nRow);
+      },
+      "drawCallback" : function(oSettings) {
+        responsiveHelper_dt_basic.respond();
+      }
+    });
+
+    $('#dt_entrevistados').dataTable({
+      "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>"+
+        "t"+
+        "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+      "autoWidth" : true,
+      "preDrawCallback" : function() {
+        // Initialize the responsive datatables helper once.
+        if (!responsiveHelper_dt_basic) {
+          responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_entrevistados'), breakpointDefinition);
+        }
+      },
+      "rowCallback" : function(nRow) {
+        responsiveHelper_dt_basic.createExpandIcon(nRow);
+      },
+      "drawCallback" : function(oSettings) {
+        responsiveHelper_dt_basic.respond();
+      }
+    });
+
+    $('#datatable_col_reorder').dataTable({
+    "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'C>r>"+
+        "t"+
+        "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-sm-6 col-xs-12'p>>",
+    "autoWidth" : true,
+    "preDrawCallback" : function() {
+      // Initialize the responsive datatables helper once.
+      if (!responsiveHelper_datatable_col_reorder) {
+        responsiveHelper_datatable_col_reorder = new ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
+      }
+    },
+    "rowCallback" : function(nRow) {
+      responsiveHelper_datatable_col_reorder.createExpandIcon(nRow);
+    },
+    "drawCallback" : function(oSettings) {
+      responsiveHelper_datatable_col_reorder.respond();
+    }     
     });
      
   };
 
-    loadScript("assets/js/plugin/datatables/jquery.dataTables.min.js", function(){
-      loadScript("assets/js/plugin/datatables/dataTables.colVis.min.js", function(){
-        loadScript("assets/js/plugin/datatables/dataTables.tableTools.min.js", function(){
-          loadScript("assets/js/plugin/datatables/dataTables.bootstrap.min.js", function(){
-            loadScript("assets/js/plugin/datatable-responsive/datatables.responsive.min.js", pagefunction)
-          });
+  loadScript("assets/js/plugin/datatables/jquery.dataTables.min.js", function(){
+    loadScript("assets/js/plugin/datatables/dataTables.colVis.min.js", function(){
+      loadScript("assets/js/plugin/datatables/dataTables.tableTools.min.js", function(){
+        loadScript("assets/js/plugin/datatables/dataTables.bootstrap.min.js", function(){
+          loadScript("assets/js/plugin/datatable-responsive/datatables.responsive.min.js", pagefunction)
         });
       });
     });
+  });
 
   </script>

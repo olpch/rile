@@ -36,7 +36,7 @@
 
 
 	$routes->get( '/alertas', 'alert#index');
-	$routes->get( '/alertas/fee', 'alert#fee');
+	$routes->get( '/alertas/test', 'alert#test');
 	
 
 	$routes->get( '/estudiantes', 'student#index');
