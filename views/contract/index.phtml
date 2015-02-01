@@ -8,10 +8,16 @@
 
    <div class="row">
       <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-         <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+         <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" 
+          data-widget-editbutton="false"
+          data-widget-colorbutton="false"
+          data-widget-deletebutton="false">
             <header>
                <span class="widget-icon"> <i class="fa fa-list"></i> </span>
-               <h2>Listado de contratos</h2>                      
+               <h2>Listado de contratos</h2>
+                <div class="widget-toolbar">
+                  <a href="/RILE/contratos/nuevo" data-toggle="modal" data-target="#newModel" class="btn btn-default btn-xs">Contrato Nuevo</a>
+              </div>
             </header>
             <div>
                <div class="jarviswidget-editbox"></div>
@@ -51,8 +57,8 @@
                            }
                            echo '</td>';
                            echo '<td>';
-                           echo '<a href="/RILE/contratos/1" data-toggle="modal" ';
-                           echo 'data-target="#newContract" class="btn btn-default btn-xs">';
+                           echo '<a href="/RILE/contratos/'.$contract['co_id'].'" data-toggle="modal" ';
+                           echo 'data-target="#newModel" class="btn btn-default btn-xs">';
                            echo 'Ver detalles</a>';
                            echo '</td>';
                            echo '</tr>';
@@ -67,7 +73,7 @@
    </div>
 </section>
 
-<div class="modal fade" id="newContract" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true">  
+<div class="modal fade" id="newModel" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true">  
      <div class="modal-dialog">  
          <div class="modal-content">
             

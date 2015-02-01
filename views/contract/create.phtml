@@ -1,0 +1,120 @@
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+		&times;
+	</button>
+	<h4 class="modal-title" id="myModalLabel">Crear Contrato</h4>
+</div>
+
+<div class="modal-body">
+	<form action="" id="checkout-form" class="smart-form" novalidate="novalidate">
+	<fieldset>
+		<div class="form-group">
+			<label class="input"> Estudiante</label>
+			<select style="width:100%" class="select2" name="estudiante">
+				<?php 
+					$promgram = '';
+					foreach($this->students as $student){ 
+						if($promgram!=$student['programa']){
+							$promgram = $student['programa'];
+							echo '<optgroup label="'.$promgram.'">';
+						} 
+						echo '<option value="'.$student['id'].'">';
+						echo $student['identificacion'] .' - '. $student['nombre'];
+						echo '</option>';
+					}
+				?>
+			</select>
+		</div>
+		<br/>
+		<div class="form-group">
+			<label class="input"> Empresa</label>
+			<select style="width:100%" class="select2" name="empresa" >
+				<?php 
+					$promgram = '';
+					foreach($this->enterprises as $enterprise){ 
+						echo '<option value="'.$enterprise['id'].'">';
+						echo $enterprise['nit'] .' - '. $enterprise['nombre'];
+						echo '</option>';
+					}
+				?>
+			</select>
+		</div>
+	</fieldset>
+	<fieldset>
+		<div class="row">
+			<section class="col col-4">
+				<label class="input">
+					<i class="icon-append fa fa-calendar"></i>
+					<input type="text" id="fch_inicio" name="fch_inicio" class="datepicker" dateformat='dd/mm/yy'>
+				</label>
+			</section>
+			<section class="col col-4">
+				<label class="input">
+					<i class="icon-append fa fa-calendar"></i>
+					<input type="text" id="fch_final" name="fch_final" class="datepicker" dateformat='dd/mm/yy'>
+				</label>
+			</section>
+		</div>
+		<div class="row">
+			<section class="col col-6">
+				<label class="input">
+					<i class="icon-append fa fa-calendar"></i>
+					<input type="text" id="cargo" name="cargo">
+				</label>
+			</section>
+			<section class="col col-6">
+				<label class="input">
+					<i class="icon-append fa fa-calendar"></i>
+					<input type="text" id="salario" name="salario">
+				</label>
+			</section>
+
+		</div>
+		<div class="form-group">
+									<label class="col-xs-2 col-lg-3 control-label">Price</label>
+									<div class="col-xs-9 col-lg-6 inputGroupContainer">
+										<div class="input-group">
+											<input type="text" class="form-control" name="price" />
+											<span class="input-group-addon">$</span>
+										</div>
+									</div>
+								</div>
+
+	</fieldset>
+	</form>
+</div>
+
+<div class="modal-footer">
+	<button type="button" class="btn btn-default" data-dismiss="modal">
+		Cancel
+	</button>
+	<button type="button" class="btn btn-primary">
+		Post Article
+	</button>
+</div>
+<script type="text/javascript">
+
+	var pagefunction = function() {
+
+		$('.select2').select2();
+
+		$('#fch_inicio').datepicker({
+				dateFormat : 'dd/mm/yy',
+				prevText : '<i class="fa fa-chevron-left"></i>',
+				nextText : '<i class="fa fa-chevron-right"></i>',
+				onSelect : function(selectedDate) {
+					$('#fch_final').datepicker('option', 'minDate', selectedDate);
+				}
+			});
+		$('#fch_final').datepicker({
+				dateFormat : 'dd/mm/yy',
+				prevText : '<i class="fa fa-chevron-left"></i>',
+				nextText : '<i class="fa fa-chevron-right"></i>',
+				onSelect : function(selectedDate) {
+					$('#fch_inicio').datepicker('option', 'maxDate', selectedDate);
+				}
+			});
+	}
+
+	loadScript("assets/js/plugin/jquery-form/jquery-form.min.js", pagefunction);
+</script>

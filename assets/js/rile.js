@@ -1,4 +1,4 @@
-$('#content').on("click", "", function(obj){
+/*$('#content').on("click", "", function(obj){
 	console.clear();
 	console.log(obj);
 	console.log($(this).parents("form"));
@@ -9,4 +9,4 @@ $('#content').on("click", "", function(obj){
 		alert('Error');
 	}
 	alert('Ha echo click');
-});
+});*/
