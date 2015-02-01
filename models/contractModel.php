@@ -53,4 +53,46 @@ class ContractModel extends Model{
 		$res = $this->_db->query($c);
 		return $res->fetchAll(PDO::FETCH_ASSOC);
 	}
+	
+	public function types(){
+		$c  = 'SELECT t.tpc_id id, t.tpc_nom nombre FROM tipo_contrato t';
+		$res = $this->_db->query($c);
+		return $res->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function create($datos){
+		$e_id = $_POST["e_id"];
+		$emp_id = $_POST["emp_id"];
+		$cargo = $_POST["cargo"];
+		$fecha_ini = $_POST["fecha_ini"];
+		$fecha_fin = $_POST["fecha_fin"];
+		$jefe = $_POST["jefe"];
+		$correo = $_POST["correo"];
+		$celular = $_POST["celular"];
+		$sueldo = $_POST["sueldo"];
+		$eps = $_POST["eps"];
+		$arl = $_POST["arl"];
+		$aux = $_POST["aux"];
+		$o_ing = $_POST["o_ing"];
+		$tp_id = $_POST["tp_id"];
+		$meses = $_POST["meses"];
+		$cod_usu = $_POST["cod_usu"];
+
+		$c  = 'INSERT INTO contratos (co_id, co_tipo_contrato, co_n_contrato, co_e_id, co_emp_id, co_cargo, ':
+		$c .= 'co_fecha_ini, co_fecha_fin, co_meses, co_jefe, co_correo, co_celular, co_sueldo, co_o_ing, ';
+		$c .= 'co_eps, co_arl, co_aux, co_estado, co_mot_id, co_ruta, co_obser, cod_usu) ';
+		/*$c .= 'VALUES (nuññ, :tpc, '1234567', '2437', '161', 'web', '2015-02-05', '2015-02-12', '1', 'omarle', 'o@lee.co', '3739717', '1235', '1245', '1', '1', '1', '1', '1', NULL, NULL, NULL)';*/
+
+		$c .= "values(null, :uid, :first_name, :last_name, :email, :password, 1, now())";
+		$res = $this->_db->prepare($c)->execute(
+			array(
+				':tpc' => $uid,
+				':first_name' => $first,
+				':last_name' => $last,
+				':email' => $email,
+				':password' => Hash::get('sha1', $password, HASH_KEY)			
+			)
+		);
+		return $res;
+	}
 }

@@ -4,13 +4,11 @@
 	</button>
 	<h4 class="modal-title" id="myModalLabel">Crear Contrato</h4>
 </div>
-
 <div class="modal-body">
-	<form action="" id="checkout-form" class="smart-form" novalidate="novalidate">
 	<fieldset>
 		<div class="form-group">
 			<label class="input"> Estudiante</label>
-			<select style="width:100%" class="select2" name="estudiante">
+			<select style="width:100%" class="select2" id="estudiante" name="estudiante">
 				<?php 
 					$promgram = '';
 					foreach($this->students as $student){ 
@@ -25,10 +23,9 @@
 				?>
 			</select>
 		</div>
-		<br/>
 		<div class="form-group">
 			<label class="input"> Empresa</label>
-			<select style="width:100%" class="select2" name="empresa" >
+			<select style="width:100%" class="select2" id="empresa" name="empresa" >
 				<?php 
 					$promgram = '';
 					foreach($this->enterprises as $enterprise){ 
@@ -39,82 +36,237 @@
 				?>
 			</select>
 		</div>
-	</fieldset>
-	<fieldset>
+		</fieldset>
+		<form action="" id="contract-form" class="smart-form" novalidate="novalidate">
+		<br/>
 		<div class="row">
-			<section class="col col-4">
+			<section class="col col-3">
 				<label class="input">
-					<i class="icon-append fa fa-calendar"></i>
-					<input type="text" id="fch_inicio" name="fch_inicio" class="datepicker" dateformat='dd/mm/yy'>
+					<i class="icon-prepend fa fa-calendar"></i>
+					<input type="text" id="fch_inicio" name="fch_inicio" class="datepicker" dateformat='dd/mm/yy' placeholder="Fecha Inicio">
 				</label>
 			</section>
-			<section class="col col-4">
+			<section class="col col-3">
 				<label class="input">
-					<i class="icon-append fa fa-calendar"></i>
-					<input type="text" id="fch_final" name="fch_final" class="datepicker" dateformat='dd/mm/yy'>
+					<i class="icon-prepend fa fa-calendar"></i>
+					<input type="text" id="fch_final" name="fch_final" class="datepicker" dateformat='dd/mm/yy' placeholder="Fecha Final">
+				</label>
+			</section>
+			<section class="col col-6">
+				<label class="select">
+					<select id="tipoc" name="tipoc">
+						<option value="default">Seleccione Tipo Contrato</option>
+						<?php 
+							foreach($this->types as $tp){
+								echo '<option value="'.$tp['id'].'">'.$tp['nombre'].'</option>';
+							}
+						?>
+				</select>
 				</label>
 			</section>
 		</div>
 		<div class="row">
-			<section class="col col-6">
+			<section class="col col-4">
 				<label class="input">
-					<i class="icon-append fa fa-calendar"></i>
-					<input type="text" id="cargo" name="cargo">
+					<input type="text" id="cargo" name="cargo" placeholder="Cargo">
 				</label>
 			</section>
-			<section class="col col-6">
+			<section class="col col-4">
 				<label class="input">
-					<i class="icon-append fa fa-calendar"></i>
-					<input type="text" id="salario" name="salario">
+					<i class="icon-prepend fa fa-money"></i>
+					<input type="text" id="salario" name="salario" placeholder="Salario">
 				</label>
 			</section>
-
+			<section class="col col-4">
+				<label class="input">
+					<i class="icon-prepend fa fa-money"></i>
+					<input type="text" id="otros" name="otros" placeholder="Otros ingresos">
+				</label>
+			</section>
 		</div>
-		<div class="form-group">
-									<label class="col-xs-2 col-lg-3 control-label">Price</label>
-									<div class="col-xs-9 col-lg-6 inputGroupContainer">
-										<div class="input-group">
-											<input type="text" class="form-control" name="price" />
-											<span class="input-group-addon">$</span>
-										</div>
-									</div>
-								</div>
-
-	</fieldset>
+		<div class="row">
+			<section class="col col-4">
+					<label class="toggle">
+						<input type="checkbox" id="eps" name="eps">
+						<i data-swchon-text="Si" data-swchoff-text="No"></i>EPS</label>
+			</section>
+			<section class="col col-8">
+								<label class="input">
+					<i class="icon-prepend fa fa-user"></i>
+					<input type="text" id="contacto" name="contacto" placeholder="Nombre contacto">
+				</label>
+			</section>
+		</div>
+		<div class="row">
+			<section class="col col-4">
+				<label class="toggle">
+					<input type="checkbox" id="arl" name="arl">
+					<i data-swchon-text="Si" data-swchoff-text="No"></i>ARL</label>
+				</section>
+			</section>
+			<section class="col col-8">
+				<label class="input">
+					<i class="icon-prepend fa fa-phone"></i>
+					<input type="tel" id="phone" name="phone" placeholder="Telefono" data-mask="999-9999" class="valid">
+				</label>
+			</section>					
+		</div>
+		<div class="row">
+			<section class="col col-4">
+				<label class="toggle">
+				<input type="checkbox" id="aux" name="aux">
+				<i data-swchon-text="Si" data-swchoff-text="No"></i>Aux. Trans.</label>
+			</section>
+			<section class="col col-8">
+				<label class="input">
+					<i class="icon-prepend fa fa-envelope-o"></i>
+					<input type="text" id="email" name="email" placeholder="Correo">
+				</label>
+			</section>
+		</div>
+		<br/>
+		<section>
+			<label class="label">Subir Contrato</label>
+			<label for="archivo" class="input input-file">
+				<div class="button"><input type="file" id="archivo" name="archivo" onchange="this.parentNode.nextSibling.value = this.value">Seleccionar</div><input type="text" placeholder="Archivo digitalizado" readonly="">
+			</label>
+		</section>
 	</form>
 </div>
 
 <div class="modal-footer">
-	<button type="button" class="btn btn-default" data-dismiss="modal">
-		Cancel
-	</button>
-	<button type="button" class="btn btn-primary">
-		Post Article
+	<button type="button" class="btn btn-primary" onclick="guardar(this)">
+		Guardar
 	</button>
 </div>
 <script type="text/javascript">
 
 	var pagefunction = function() {
-
 		$('.select2').select2();
-
+		$('#phone').mask("999-9999");
 		$('#fch_inicio').datepicker({
-				dateFormat : 'dd/mm/yy',
-				prevText : '<i class="fa fa-chevron-left"></i>',
-				nextText : '<i class="fa fa-chevron-right"></i>',
-				onSelect : function(selectedDate) {
-					$('#fch_final').datepicker('option', 'minDate', selectedDate);
-				}
-			});
+			dateFormat : 'dd/mm/yy',
+			prevText : '<i class="fa fa-chevron-left"></i>',
+			nextText : '<i class="fa fa-chevron-right"></i>',
+			onSelect : function(selectedDate) {
+				$('#fch_final').datepicker('option', 'minDate', selectedDate);
+			}
+		});
 		$('#fch_final').datepicker({
-				dateFormat : 'dd/mm/yy',
-				prevText : '<i class="fa fa-chevron-left"></i>',
-				nextText : '<i class="fa fa-chevron-right"></i>',
-				onSelect : function(selectedDate) {
-					$('#fch_inicio').datepicker('option', 'maxDate', selectedDate);
-				}
-			});
+			dateFormat : 'dd/mm/yy',
+			prevText : '<i class="fa fa-chevron-left"></i>',
+			nextText : '<i class="fa fa-chevron-right"></i>',
+			onSelect : function(selectedDate) {
+				$('#fch_inicio').datepicker('option', 'maxDate', selectedDate);
+			}
+		});
+		var $checkoutForm = $('#contract-form').validate({
+		    rules : {
+		        cargo : { required : true},
+		        salario : { required : true, currency : true },
+		        otros : { required : true, currency : true },
+		        fch_inicio : { required : true },
+		        fch_final : { required : true },
+		        contacto : { required : true },
+		        phone : { required : true },
+		        tipoc : { valueNotDefaults : 'default'},
+		        email : { required : true, email : true }
+		    },
+  		    messages : {
+		        cargo : {
+		          required : 'Campo requerido.'
+		        },
+		        salario : {
+		          required : 'Campo requerido',
+		          currency : 'Formato desconocido'
+		        },
+		        otros : {
+		          required : 'Campo requerido',
+		          currency : 'Formato desconocido'
+		        },
+		        fch_inicio : {
+		          required : 'Campo requerido'
+		        },
+		        fch_final : {
+		          required : 'Campo requerido'
+		        },
+		        contacto : {
+		          required : 'Campo requerido'
+		        },
+		        phone : {
+		          required : 'Campo requerido'
+		        },
+		        tipoc : {
+		        	valueNotDefaults : 'Selecione una opción'
+		        },
+		        email : {
+		          required : 'El email es requerido.',
+		          email : 'Formato de email desconocido.'
+		        }
+		    },
+  
+    		errorPlacement : function(error, element) {
+        		error.insertAfter(element.parent());
+      		}
+    	});
+
 	}
 
+	/*$.validator.addMethod("email", function(value, element){
+		return this.optional(element) || /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/i.test(value);
+		}, "Ingresa un email valido.");*/
+
 	loadScript("assets/js/plugin/jquery-form/jquery-form.min.js", pagefunction);
+
+	function guardar(){
+		var obj = $('#contract-form').validate();
+		obj.form();
+		if(obj.valid()){
+			archivo = $('#archivo');
+			var data = new FormData();
+			for(i=0; i<archivo.length; i++){
+          		data.append('archivo'+i,archivo[i]);  
+        	}
+			data.append('e_id',  $('#estudiante').val());
+	        data.append('emp_id',$('#empresa').val());
+	        data.append('cargo', $('#cargo').val());
+	        data.append('fecha_ini',$('#fch_inicio').val());
+	        data.append('fecha_fin',$('#fch_final').val());
+	        data.append('jefe',$('#contacto').val());
+	        data.append('correo',$('#email').val());
+	        data.append('celular',$('#phone').val());
+	        data.append('sueldo',$('#salario').val());
+	        data.append('eps',$('#eps').is(':checked'));
+	        data.append('arl',$('#arl').is(':checked'));
+	        data.append('aux',$('#aux').is(':checked'));
+	        data.append('o_ing',$('#otros').val());
+	        data.append('tp_id',$('#tipoc').val());
+	        console.log(data);
+	        /*return false;*/
+		}else{
+			return false;
+		}
+
+		console.log('paso por aki3');
+
+		$.ajax({
+          url:'/RILE/contratos',
+          type:'POST', 
+          contentType:false,
+          data:data, 
+          processData:false,
+          cache:false 
+        }).done(function(msg){
+          console.log(msg);
+          if ($.trim(msg)=="1") {
+                  alert("Contrato Guardado Exitosamente");
+                  window.location.reload();
+               }else{
+                  alert("problemas al guardar el contrato  - Contacte con soporte tecnico");
+                  button.disabled = "";
+               }
+        }); 
+
+	}
+
 </script>

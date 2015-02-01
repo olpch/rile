@@ -54,6 +54,7 @@
 	$routes->post('/empresas/:id', 'enterprise#update');
 	
 	$routes->get( '/contratos', 'contract#index');
+	$routes->post( '/contratos', 'contract#newo');
 	$routes->get( '/contratos/nuevo', 'contract#create');
 	$routes->get( '/contratos/:id', 'contract#show');
 

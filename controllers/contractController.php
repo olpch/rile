@@ -24,6 +24,7 @@ class contractController extends Controller{
 
 	public function create(){
 		//Session::access(1);
+		$this->_view->types       = $this->contracts->types();
 		$this->_view->contracts   = $this->contracts->all();
 		$this->_view->students    = $this->contracts->students();
 		$this->_view->enterprises = $this->contracts->enterprises();
@@ -34,12 +35,8 @@ class contractController extends Controller{
 		$this->_view->renderContent();
 	}
 
-	public function index2(){
-		// Session::access(1);
-		$this->_view->contracts = $this->contracts->all();
-		echo '<pre>';
-		print_r($this->_view->contracts);
-		echo '<pre>';
-		die();
+	public function newo(){
+		$this->contracts->create($_POST);
 	}
+
 }
