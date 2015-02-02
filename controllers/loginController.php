@@ -12,11 +12,11 @@ class loginController extends Controller{
 		}
 		if(isset($_POST['x_usuario'])){
 			$checklogin = $this->users->signin($_POST['x_usuario'], $_POST['x_clave']);
-			echo '<br/><pre>';
+/*			echo '<br/><pre>';
 			print_r($checklogin);
 			echo '<pre>';
 			die();
-			if($checklogin){
+*/			if($checklogin){
 				Session::register(true);
 				Session::set('level', $checklogin['level']);
 				Session::set('tipo', $checklogin['tipo']);
