@@ -2,70 +2,308 @@
 	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 		&times;
 	</button>
-	<h4 class="modal-title" id="myModalLabel">Article Post</h4>
+	<h4 class="modal-title" id="myModalLabel">Editar Contrato</h4>
 </div>
-
 <div class="modal-body">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Title" required />
-			</div>
-			<div class="form-group">
-				<textarea class="form-control" placeholder="Content" rows="5" required></textarea>
-			</div>
+	<fieldset>
+		<div class="form-group">
+			<label class="badge bg-color-darken"> Estudiante </label>
+			<!-- <select style="width:100%" class="select2" id="estudiante" name="estudiante">
+				<?php 
+					$promgram = '';
+					foreach($this->students as $student){ 
+						if($promgram!=$student['programa']){
+							$promgram = $student['programa'];
+							echo '<optgroup label="'.$promgram.'">';
+						} 
+						echo '<option value="'.$student['id'].'">';
+						echo $student['identificacion'] .' - '. $student['nombre'];
+						echo '</option>';
+					}
+				?>
+			</select> -->
+			<label>
+				<strong>
+					<?php 
+						echo strtoupper($this->contract['estudiante']) .' - ' . $this->contract['e_identificacion'];?>
+				</strong>
+			</label>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6">
-			<div class="form-group">
-				<label for="category"> Category</label>
-				<select class="form-control" id="category">
-					<option>Articles</option>
-					<option>Tutorials</option>
-					<option>Freebies</option>
+		<div class="form-group">
+			<label class="badge bg-color-darken"> Empresa </label>
+			<!-- <select style="width:100%" class="select2" id="empresa" name="empresa" >
+				<?php 
+					$promgram = '';
+					foreach($this->enterprises as $enterprise){ 
+						echo '<option value="'.$enterprise['id'].'">';
+						echo $enterprise['nit'] .' - '. $enterprise['nombre'];
+						echo '</option>';
+					}
+				?>
+			</select> -->
+			<label>
+				<strong>
+					<?php 
+						echo strtoupper($this->contract['razon_social']) .' - ' . $this->contract['e_identificacion'];?>
+				</strong>
+			</label>
+		</div>
+		</fieldset>
+		<form action="" id="contract-form" class="smart-form" novalidate="novalidate">
+		<br/>
+		<div class="row">
+			<section class="col col-3">
+				<label class="input">
+					<i class="icon-prepend fa fa-calendar"></i>
+					<input type="text" id="fch_inicio" name="fch_inicio" class="datepicker" dateformat='yy-mm-dd' placeholder="Fecha Inicio" value="<?php echo $this->contract['co_fecha_ini']?>">
+				</label>
+			</section>
+			<section class="col col-3">
+				<label class="input">
+					<i class="icon-prepend fa fa-calendar"></i>
+					<input type="text" id="fch_final" name="fch_final" class="datepicker" dateformat='yy-mm-dd' placeholder="Fecha Final" value="<?php echo $this->contract['co_fecha_fin']?>">
+				</label>
+			</section>
+			<section class="col col-6">
+				<label class="select">
+					<select id="tipoc" name="tipoc">
+						<option value="default">Seleccione Tipo Contrato</option>
+						<?php 
+							foreach($this->types as $tp){
+								echo '<option value="'.$tp['id'].'" ';
+								if($this->contract['co_tipo_contrato'] == $tp['id']){
+									echo 'selected ';
+								}
+								echo '>'.$tp['nombre'].'</option>';
+							}
+						?>
 				</select>
-			</div>
+				</label>
+			</section>
 		</div>
-		<div class="col-md-6">
-			<div class="form-group">
-				<label for="tags"> Tags</label>
-				<input type="text" class="form-control" id="tags" placeholder="Tags" />
-			</div>
+		<div class="row">
+			<section class="col col-4">
+				<label class="input">
+					<input type="text" id="cargo" name="cargo" placeholder="Cargo" value="<?php echo $this->contract['co_cargo'];?>">
+				</label>
+			</section>
+			<section class="col col-4">
+				<label class="input">
+					<i class="icon-prepend fa fa-money"></i>
+					<input type="text" id="salario" name="salario" placeholder="Salario" value="<?php echo round($this->contract['co_sueldo']);?>">
+				</label>
+			</section>
+			<section class="col col-4">
+				<label class="input">
+					<i class="icon-prepend fa fa-money"></i>
+					<input type="text" id="otros" name="otros" placeholder="Otros ingresos" value="<?php echo round($this->contract['co_o_ing']);?>">
+				</label>
+			</section>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<div class="well well-sm well-primary">
-				<form class="form form-inline " role="form">
-					<div class="form-group">
-						<input type="text" class="form-control" value="" placeholder="Date" required />
-					</div>
-					<div class="form-group">
-						<select class="form-control">
-							<option>Draft</option>
-							<option>Published</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<button type="submit" class="btn btn-success btn-sm">
-							<span class="glyphicon glyphicon-floppy-disk"></span> Save
-						</button>
-						<button type="button" class="btn btn-default btn-sm">
-							<span class="glyphicon glyphicon-eye-open"></span> Preview
-						</button>
-					</div>
-				</form>
-			</div>
+		<div class="row">
+			<section class="col col-4">
+					<label class="toggle">
+						<input type="checkbox" id="eps" name="eps" <?php echo ($this->contract['co_eps']==1) ? 'checked' : '' ?>>
+						<i data-swchon-text="Si" data-swchoff-text="No"></i>EPS</label>
+			</section>
+			<section class="col col-8">
+								<label class="input">
+					<i class="icon-prepend fa fa-user"></i>
+					<input type="text" id="contacto" name="contacto" placeholder="Nombre contacto" value="<?php echo $this->contract['co_jefe'] ?>">
+				</label>
+			</section>
 		</div>
-	</div>
+		<div class="row">
+			<section class="col col-4">
+				<label class="toggle">
+					<input type="checkbox" id="arl" name="arl" <?php echo ($this->contract['co_arl']==1) ? 'checked' : '' ?>>
+					<i data-swchon-text="Si" data-swchoff-text="No"></i>ARL</label>
+				</section>
+			</section>
+			<section class="col col-8">
+				<label class="input">
+					<i class="icon-prepend fa fa-phone"></i>
+					<input type="tel" id="phone" name="phone" placeholder="Telefono" data-mask="999-9999" class="valid" value="<?php echo $this->contract['co_celular'] ?>">
+				</label>
+			</section>					
+		</div>
+		<div class="row">
+			<section class="col col-4">
+				<label class="toggle">
+				<input type="checkbox" id="aux" name="aux" <?php echo ($this->contract['co_aux']==1) ? 'checked' : '' ?>>
+				<i data-swchon-text="Si" data-swchoff-text="No"></i>Aux. Trans.</label>
+			</section>
+			<section class="col col-8">
+				<label class="input">
+					<i class="icon-prepend fa fa-envelope-o"></i>
+					<input type="text" id="email" name="email" placeholder="Correo" value="<?php echo $this->contract['co_correo'] ?>">
+				</label>
+			</section>
+		</div>
+		<br/>
+		<section>
+			<label class="label">Subir Contrato <strong>
+				<?php 
+					if(isset($this->contract['co_ruta'])){
+						echo '['.substr(strtolower($this->contract['co_ruta']), 10, 60).']';	
+					}
+					?>
+				</strong></label>
+			<label for="archivo" class="input input-file">
+				<div class="button"><input type="file" id="archivo" name="archivo" onchange="this.parentNode.nextSibling.value = this.value">Seleccionar</div><input type="text" placeholder="Archivo digitalizado" readonly="">
+			</label>
+		</section>
+	</form>
 </div>
 
 <div class="modal-footer">
-	<button type="button" class="btn btn-default" data-dismiss="modal">
-		Cancel
+	<button type="button" class="btn btn-danger" onclick="anular()">
+		Anular
 	</button>
-	<button type="button" class="btn btn-primary">
-		Post Article
+	<button type="button" class="btn btn-primary" onclick="guardar(this)">
+		Guardar
 	</button>
 </div>
+<script type="text/javascript">
+
+	var pagefunction = function() {
+		$('.select2').select2();
+		$('#phone').mask("999-9999");
+		$('#fch_inicio').datepicker({
+			dateFormat : 'yy-mm-dd',
+			prevText : '<i class="fa fa-chevron-left"></i>',
+			nextText : '<i class="fa fa-chevron-right"></i>',
+			onSelect : function(selectedDate) {
+				$('#fch_final').datepicker('option', 'minDate', selectedDate);
+			}
+		});
+		$('#fch_final').datepicker({
+			dateFormat : 'yy-mm-dd',
+			prevText : '<i class="fa fa-chevron-left"></i>',
+			nextText : '<i class="fa fa-chevron-right"></i>',
+			onSelect : function(selectedDate) {
+				$('#fch_inicio').datepicker('option', 'maxDate', selectedDate);
+			}
+		});
+		var $checkoutForm = $('#contract-form').validate({
+		    rules : {
+		        cargo : { required : true},
+		        salario : { required : true, currency : true },
+		        otros : { required : true, currency : true },
+		        fch_inicio : { required : true },
+		        fch_final : { required : true },
+		        contacto : { required : true },
+		        phone : { required : true },
+		        tipoc : { valueNotDefaults : 'default'},
+		        email : { required : true, email : true }
+		    },
+  		    messages : {
+		        cargo : {
+		          required : 'Campo requerido.'
+		        },
+		        salario : {
+		          required : 'Campo requerido',
+		          currency : 'Formato desconocido'
+		        },
+		        otros : {
+		          required : 'Campo requerido',
+		          currency : 'Formato desconocido'
+		        },
+		        fch_inicio : {
+		          required : 'Campo requerido'
+		        },
+		        fch_final : {
+		          required : 'Campo requerido'
+		        },
+		        contacto : {
+		          required : 'Campo requerido'
+		        },
+		        phone : {
+		          required : 'Campo requerido'
+		        },
+		        tipoc : {
+		        	valueNotDefaults : 'Selecione una opción'
+		        },
+		        email : {
+		          required : 'El email es requerido.',
+		          email : 'Formato de email desconocido.'
+		        }
+		    },
+  
+    		errorPlacement : function(error, element) {
+        		error.insertAfter(element.parent());
+      		}
+    	});
+
+	}
+
+	loadScript("assets/js/plugin/jquery-form/jquery-form.min.js", pagefunction);
+
+	function anular(){
+		var ruta = "/RILE/contratos/<?php echo $this->contract['co_id']; ?>/anular";
+		alert(ruta);
+		$.ajax({
+          url: ruta,
+          type:'POST', 
+          contentType:false,
+          processData:false,
+          cache:false 
+        }).done(function(msg){
+          console.log(msg);
+          if ($.trim(msg)=="1") {
+                  alert("Contrato Anulado Exitosamente");
+                  window.location.reload();
+               }
+        }); 
+	}
+
+	function guardar(){
+		var obj = $('#contract-form').validate();
+		obj.form();
+		if(obj.valid()){
+			archivo = $('#archivo');
+			var data = new FormData();
+			for(i=0; i<archivo.length; i++){
+          		data.append('archivo'+i,archivo[i]);  
+        	}
+        	$eps = $('#eps').is(':checked') ? 1 : 2;
+        	$arl = $('#arl').is(':checked') ? 1 : 2;
+        	$aux = $('#aux').is(':checked') ? 1 : 2;
+	        data.append('cargo', $('#cargo').val());
+	        data.append('fecha_ini',$('#fch_inicio').val());
+	        data.append('fecha_fin',$('#fch_final').val());
+	        data.append('jefe',$('#contacto').val());
+	        data.append('correo',$('#email').val());
+	        data.append('celular',$('#phone').val());
+	        data.append('sueldo',$('#salario').val());
+	        data.append('eps',$eps);
+	        data.append('arl',$arl);
+	        data.append('aux',$aux);
+	        data.append('o_ing',$('#otros').val());
+	        data.append('tp_id',$('#tipoc').val());
+	        data.append('co_id', <?php echo $this->contract['co_id']; ?>);
+		}else{
+			return false;
+		}
+		var ruta = "/RILE/contratos/<?php echo $this->contract['co_id']; ?>";
+		$.ajax({
+          url: ruta,
+          type:'POST', 
+          contentType:false,
+          data:data, 
+          processData:false,
+          cache:false 
+        }).done(function(msg){
+          console.log(msg);
+          if ($.trim(msg)=="1") {
+                  alert("Contrato Guardado Exitosamente");
+                  window.location.reload();
+               }else{
+                  alert("problemas al guardar el contrato  - Contacte con soporte tecnico");
+                  button.disabled = "";
+               }
+        }); 
+
+	}
+
+</script>

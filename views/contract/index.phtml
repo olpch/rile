@@ -50,7 +50,7 @@
                            echo '<td>'.strtolower($contract['estudiante']).'</td>';
                            echo '<td>'.$contract['co_fecha_ini'].'</td>';
                            echo '<td>';
-                           if($contract['co_fecha_ini']==3){
+                           if($contract['co_estado']==3){
                               echo '<label class="badge bg-color-red">Anulado</label>';
                            }else{
                               echo '<label class="badge bg-color-greenLight">Activo</label>';
@@ -59,7 +59,7 @@
                            echo '<td>';
                            echo '<a href="/RILE/contratos/'.$contract['co_id'].'" data-toggle="modal" ';
                            echo 'data-target="#newModel" class="btn btn-default btn-xs">';
-                           echo 'Ver detalles</a>';
+                           echo 'Editar</a>';
                            echo '</td>';
                            echo '</tr>';
                         }

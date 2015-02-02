@@ -18,14 +18,26 @@ class contractController extends Controller{
 
 	public function show($id){
 		// Session::access(1);
-		$this->_view->contracts = $this->contracts->find($id);
+		$this->_view->types       = $this->contracts->types();
+		$this->_view->contract    = $this->contracts->find($id);
+		$this->_view->students    = $this->contracts->students();
+		$this->_view->enterprises = $this->contracts->enterprises();
+		/*echo '<pre>';
+		print_r($this->_view->contract);
+		echo '<pre>';
+		die();*/
 		$this->_view->renderContent();
+	}
+
+	public function update(){
+		$this->contracts->update($_POST);
+		echo '1';
 	}
 
 	public function create(){
 		//Session::access(1);
 		$this->_view->types       = $this->contracts->types();
-		$this->_view->contracts   = $this->contracts->all();
+		/*$this->_view->contracts   = $this->contracts->all();*/
 		$this->_view->students    = $this->contracts->students();
 		$this->_view->enterprises = $this->contracts->enterprises();
 /*		echo '<pre>';
@@ -37,6 +49,12 @@ class contractController extends Controller{
 
 	public function newo(){
 		$this->contracts->create($_POST);
+		echo '1';
+	}
+
+	public function disable($id){
+		$this->contracts->anular($id);
+		echo '1';	
 	}
 
 }

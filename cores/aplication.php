@@ -40,3 +40,12 @@ function toResponse($status_code, $response, $view = null) {
     die();
 }
 
+
+function pathLocal($pth = ''){
+    echo BASE_URL.$pth;
+}
+
+function pathAjax($pth = '#'){
+    echo BASE_URL.'#'.$pth;
+}
+

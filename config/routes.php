@@ -54,9 +54,11 @@
 	$routes->post('/empresas/:id', 'enterprise#update');
 	
 	$routes->get( '/contratos', 'contract#index');
-	$routes->post( '/contratos', 'contract#newo');
+	$routes->post('/contratos', 'contract#newo');
 	$routes->get( '/contratos/nuevo', 'contract#create');
+	$routes->post('/contratos/:id', 'contract#update');
 	$routes->get( '/contratos/:id', 'contract#show');
+	$routes->post('/contratos/:id/anular', 'contract#disable');
 
 	$routes->get( '/empresas2', 'enterprise#index2');
 	$routes->get( '/api/estudiantes', 'student#index2');

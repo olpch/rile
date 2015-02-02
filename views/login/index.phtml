@@ -64,6 +64,10 @@
 					<input type="submit" class="ingresar" id="btn" value="Ingresar a la Plataforma">
 				</div>
 			</form>
+			<?php
+				if(isset($this->msgError))
+					echo '<div class="msgError">'.$this->msgError.'</div>';
+			?>
 		</div>
 		<div style="text-align: center; margin-top: 15px">
 			<img src="assets/img/rile/acc-03.png">

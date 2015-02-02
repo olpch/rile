@@ -12,10 +12,10 @@ class loginController extends Controller{
 		}
 		if(isset($_POST['x_usuario'])){
 			$checklogin = $this->users->signin($_POST['x_usuario'], $_POST['x_clave']);
-			// echo '<br/><pre>';
-			// print_r($checklogin);
-			// echo '<pre>';
-			// die();
+			echo '<br/><pre>';
+			print_r($checklogin);
+			echo '<pre>';
+			die();
 			if($checklogin){
 				Session::register(true);
 				Session::set('level', $checklogin['level']);
@@ -24,7 +24,7 @@ class loginController extends Controller{
 				Session::set('time', time());
 				$this->redirectTo('#dashboard');
 			}else{
-				$this->msgError  = "Datos no coinciden, por favor verifique.";
+				$this->_view->msgError  = "Datos no coinciden, por favor verifique.";
 			}
 		}
 		$this->_view->renderContent();

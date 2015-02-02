@@ -117,7 +117,7 @@
 
 			if( (time() - Session::get('time')) > (SESSION_TIME * 60) ){
 				Session::destroy();
-				header('location:'.BASE_URL.'error/code8080');
+				header('location:'.BASE_URL);
 			}else{
 				Session::set('time', time());
 			}
