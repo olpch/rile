@@ -36,17 +36,17 @@
 						            	<div class="row">
 							            	<section class="col col-4">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Identificación">
+							                    	<input type="number" name="id_estudiante" placeholder="Identificación">
 							                    </label>
 							                </section>
 											<section class="col col-4">
-							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Fecha de expedicion">
+							                	<label class="input"><i class="icon-prepend glyphicon glyphicon-barcode"></i>
+							                		<input type="date" name="Fecha_de_expedicion">
 							                    </label>
 							                </section>
 							                <section class="col col-4">
 												<label class="select">
-													<select class="input-sm">
+													<select class="input-sm" name="Ciudad_de_Expedicion">
 														<option value="0">Ciudad de Expedicion</option>
 														<option value="1">Alexandra</option>
 														<option value="2">Alice</option>
@@ -59,17 +59,17 @@
 						          		<div class="row">
 							            	<section class="col col-4">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Nro de libreta militar">
+							                    	<input type="number" name="Nro_de_libreta_militar" placeholder="Nro de libreta militar">
 							                    </label>
 							                </section>
 											<section class="col col-4">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Distrito militar">
+							                    	<input type="text" name="Distrito_militar" placeholder="Distrito militar">
 							                    </label>
 							                </section>
 							                <section class="col col-4">
 												<label class="select">
-													<select class="input-sm">
+													<select class="input-sm" name="Ciudad_Lib._militar">
 														<option value="0">Ciudad Lib. militar</option>
 														<option value="1">Alexandra</option>
 														<option value="2">Alice</option>
@@ -82,41 +82,42 @@
 						          		<div class="row">
 							            	<section class="col col-6">
 								            	<label class="input"> <i class="icon-prepend fa fa-briefcase"></i>
-								                	<input type="text" name="razon" placeholder="Nombres">
+								                	<input type="text" name="Nombres" placeholder="Nombres">
 								                </label>
 							            	</section>
 									        <section class="col col-6">
 						                        <label class="input"> <i class="icon-prepend fa fa-map-marker"></i>
-						                        	<input type="text" name="razon" placeholder="Apellido">
+						                        	<input type="text" name="Apellido" placeholder="Apellido">
 						                        </label>
 					                    	</section>
 					                    </div>
 					                    <div class="row">
 									        <section class="col col-3">
 						                        <label class="input"> <i class="icon-prepend fa fa-map-marker"></i>
-						                        	<input type="text" name="address" placeholder="Dirección">
+						                        	<input type="text" name="Dirección" placeholder="Dirección">
 						                        </label>
 					                    	</section>
 											<section class="col col-3">
 									            	<label class="input"> <i class="icon-prepend fa fa-briefcase"></i>
-									                	<input type="text" name="razon" placeholder="Barrio">
+									                	<input type="text" name="Barrio" placeholder="Barrio">
 									                </label>
 								           	</section>
 								           	<section class="col col-3">
 												<label class="select">
-													<select class="input-sm">
+													<select class="input-sm" name="Estracto">
 														<option value="0">Estracto</option>
 														<option value="1">1</option>
 														<option value="2">2</option>
 														<option value="3">3</option>
 														<option value="4">4</option>
 														<option value="5">5</option>
+														<option value="6">6</option>
 													</select> <i></i> 
 												</label>
 											</section>
 								           	<section class="col col-3">
 												<label class="select">
-													<select class="input-sm">
+													<select class="input-sm" name="Ciudad">
 														<option value="0">Ciudad</option>
 														<option value="1">Alexandra</option>
 														<option value="2">Alice</option>
@@ -129,37 +130,37 @@
 										<div class="row">
 											<section class="col col-6">
 						                        <label class="input"> <i class="icon-prepend fa fa-map-marker"></i>
-						                        	<input type="text" name="address" placeholder="Telefono">
+						                        	<input type="number" name="Telefono" placeholder="Telefono">
 						                        </label>
 					                    	</section>
 					                    	<section class="col col-6">
 						                        <label class="input"> <i class="icon-prepend fa fa-map-marker"></i>
-						                        	<input type="text" name="address" placeholder="Celular">
+						                        	<input type="number" name="Celular" placeholder="Celular">
 						                        </label>
 					                    	</section>
 										</div>
 										<div class="row">
 											<section class="col col-6">
 						                        <label class="input"> <i class="icon-prepend fa fa-map-marker"></i>
-						                        	<input type="text" name="address" placeholder="Email">
+						                        	<input type="email" name="Email" placeholder="Email">
 						                        </label>
 					                    	</section>
 					                    	<section class="col col-6">
 						                        <label class="input"> <i class="icon-prepend fa fa-map-marker"></i>
-						                        	<input type="text" name="address" placeholder="Pasado Judicial No.">
+						                        	<input type="number" name="Pasado_Judicial_No." placeholder="Pasado Judicial No.">
 						                        </label>
 					                    	</section>
 										</div>
 										<div class="row">
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Licencia_Conducción">
 													<i data-swchon-text="ON" data-swchoff-text="OFF"></i>Licencia Conducción
 												</label>
 					                    	</section>
 					                    	<section class="col col-6">
 						                        <label class="select">
-													<select class="input-sm">
+													<select class="input-sm" name="Categoria">
 														<option value="0">Categoria</option>
 														<option value="1">1</option>
 														<option value="2">2</option>
@@ -176,13 +177,13 @@
 										<div class="row">
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Sisben">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Sisben
 												</label>
 											</section>	
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Pertenencia_a_red_unidos">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Pertenencia a red unidos
 												</label>
 											</section>
@@ -190,64 +191,67 @@
 										<div class="row">
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Cetificado_Manipulacion_Alimentos">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Cetificado Manipulacion Alimentos
 												</label>
 											</section>	
 											<section class="col col-6">
 												<label class="input"> <i class="icon-prepend fa fa-map-marker"></i>
-						                        	<input type="text" name="address" placeholder="Expedida por">
+						                        	<input type="text" name="Expedida_por_1" placeholder="Expedida por">
 						                        </label>
 											</section>
 										</div>
 										<div class="row">
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Certificado_Bioseguridad">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Certificado Bioseguridad
 												</label>
 											</section>	
 											<section class="col col-6">
 												<label class="input"> <i class="icon-prepend fa fa-map-marker"></i>
-						                        	<input type="text" name="address" placeholder="Expedida por">
+						                        	<input type="text" name="Expedida_por_2" placeholder="Expedida por">
 						                        </label>
 											</section>
 										</div>
 										<div class="row">
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Certificado_de_Trabajo_en_Altura">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Certificado de Trabajo en Altura
 												</label>
 											</section>	
 											<section class="col col-6">
 												<label class="input"> <i class="icon-prepend fa fa-map-marker"></i>
-						                        	<input type="text" name="address" placeholder="Expedida por">
+						                        	<input type="text" name="Expedida_por_3" placeholder="Expedida por">
 						                        </label>
 											</section>
 										</div>
 										<div class="row">
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Certificado_Conte">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Certificado Conte
 												</label>
 											</section>	
 											<section class="col col-6">
 												<label class="input"> <i class="icon-prepend fa fa-map-marker"></i>
-						                        	<input type="text" name="address" placeholder="Expedida por">
+						                        	<input type="text" name="Expedida_por_4" placeholder="Expedida por">
 						                        </label>
 											</section>
 										</div>
 										<section>
 											<label class="textarea textarea-expandable">	
-												<textarea rows="3" class="custom-scroll"></textarea> 
+												<textarea rows="3" class="custom-scroll" name="text_area"></textarea> 
 											</label>
 											<div class="note">
 												<strong>Nota:</strong> Se expande.
 											</div>
 										</section>
 						            </fieldset>
+						            <footer>
+											<button type="submit" class="btn btn-primary" name="submit_s1">Enviar</button>
+									</footer>
 					            </form>														
 							</div>
 							<div class="tab-pane fade" id="s2">
@@ -257,12 +261,12 @@
 					                	<div class="row">
 							            	<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Fecha de nacimiento">
+							                    	<input type="date" name="Fecha_de_nacimiento" placeholder="Fecha de nacimiento">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Sexo">
 													<i data-swchon-text="M" data-swchoff-text="F"></i>Sexo
 												</label>
 											</section>
@@ -270,12 +274,12 @@
 										<div class="row">
 											<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Profesión/Oficio">
+							                    	<input type="text" name="Profesión_Oficio" placeholder="Profesión/Oficio">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 												<label class="select">
-													<select class="input-sm">
+													<select class="input-sm" name="Estado_Civil">
 														<option value="0">Estado Civil</option>
 														<option value="1">Soltero</option>
 														<option value="2">Casado</option>
@@ -288,24 +292,24 @@
 										<div class="row">
 											<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Peso">
+							                    	<input type="number" name="Peso" placeholder="Peso">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Estatura">
+							                    	<input type="number" name="Estatura" placeholder="Estatura">
 							                    </label>
 							                </section>
 										</div>
 										<div class="row">
 											<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Talla de Zapato 	">
+							                    	<input type="number" name="Talla_de_Zapato" placeholder="Talla de Zapato">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 												<label class="select">
-													<select class="input-sm">
+													<select class="input-sm" name="Tipo_de_sangre">
 														<option value="0">Tipo de sangre</option>
 														<option value="1">O+</option>
 														<option value="2">AB+</option>
@@ -322,12 +326,12 @@
 										<div class="row">
 											<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Talla de Pantalon">
+							                    	<input type="number" name="Talla_de_Pantalon" placeholder="Talla de Pantalon">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Talla de Camisa">
+							                    	<input type="text" name="Talla_de_Camisa" placeholder="Talla de Camisa">
 							                    </label>
 							                </section>
 										</div>
@@ -340,7 +344,7 @@
 										<div class="row">
 												<section class="col col-4">
 													<label class="select">
-														<select class="input-sm">
+														<select class="input-sm" name="Grupo_Étnico">
 															<option value="0">Grupo Étnico</option>
 															<option value="1">Afrocolombiano</option>
 															<option value="2">Indigena</option>
@@ -351,7 +355,7 @@
 												</section>
 												<section class="col col-4">
 													<label class="select">
-														<select class="input-sm">
+														<select class="input-sm" name="Tipo_de_Étnia">
 															<option value="0">Tipo de Étnia</option>
 															<option value="1">Afrodecendiente</option>
 															<option value="2">Negro</option>
@@ -377,13 +381,13 @@
 						            	<div class="row">
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Madre_cabeza_de_familia">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Madre cabeza de familia
 												</label>
 											</section>	
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Desplazado_por_la_violencia">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Desplazado por la violencia
 												</label>
 											</section>
@@ -391,13 +395,13 @@
 										<div class="row">
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Desplazado_por_fenomeno_natural">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Desplazado por fenomeno natural
 												</label>
 											</section>	
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Reinsertado">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Reinsertado
 												</label>
 											</section>	
@@ -405,18 +409,20 @@
 										<div class="row">
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Discapacitado">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Discapacitado 	
 												</label>
 											</section>	
 											<section class="col col-6">
 												<label class="input"> <i class="icon-prepend fa fa-map-marker"></i>
-						                        	<input type="text" name="address" placeholder="Discapacidad">
+						                        	<input type="text" name="Discapacidad" placeholder="Discapacidad">
 						                        </label>
 											</section>
 										</div>
 						            </fieldset>
-
+									<footer>
+											<button type="submit" class="btn btn-primary" name="submit_s2">Enviar</button>
+									</footer>
 								</form>
 							</div>
 							
@@ -430,24 +436,24 @@
 						            	<div class="row">
 							            	<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Nombre">
+							                    	<input type="text" name="Nombre_Ref_Familiar" placeholder="Nombre">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Parentesco">
+							                    	<input type="text" name="Parentesco" placeholder="Parentesco">
 							                    </label>
 							                </section>
 						          		</div>
 						          		<div class="row">
 							            	<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Edad">
+							                    	<input type="number" name="Edad" placeholder="Edad">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Sexo">
 													<i data-swchon-text="M" data-swchoff-text="F"></i>Sexo
 												</label>
 											</section>
@@ -455,24 +461,23 @@
 						          		<div class="row">
 							            	<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Ocupación">
+							                    	<input type="text" name="Ocupación" placeholder="Ocupación">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 													<label class="select">
-														<select class="input-sm">
-															<option value="0">Nivel de escolaridad 	</option>
+														<select class="input-sm" name="Nivel_de_escolaridad">
+															<option value="0">Nivel de escolaridad</option>
 															<option value="1">Bachiller</option>
 															<option value="2">Técnico</option>
 															<option value="3">Técnologo</option>
 															<option value="4">Profesional</option>
 															<option value="5">Basica Primaria</option>
-														</select> <i></i> 
+														</select><i></i> 
 													</label>
 												</section>
 						          		</div>
 						            </fieldset>
-
 									<header>
 						                Personales
 						            </header>
@@ -480,24 +485,24 @@
 						            	<div class="row">
 							            	<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Nombre">
+							                    	<input type="text" name="Nombre_Ref_Persoles" placeholder="Nombre">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Parentesco">
+							                    	<input type="text" name="Parentesco_Ref_Personal" placeholder="Parentesco">
 							                    </label>
 							                </section>
 						          		</div>
 						          		<div class="row">
 							            	<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Direccion">
+							                    	<input type="text" name="Direccion_Ref_Personal" placeholder="Direccion">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 													<label class="select">
-														<select class="input-sm">
+														<select class="input-sm" name="Ciudad_Ref_Personal">
 															<option value="0">Ciudad</option>
 															<option value="1">Bachiller</option>
 															<option value="2">Técnico</option>
@@ -511,28 +516,31 @@
 						          		<div class="row">
 							            	<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Telefono">
+							                    	<input type="number" name="Telefono_Ref_Personal" placeholder="Telefono">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Celular">
+							                    	<input type="number" name="Celular_Ref_Personal" placeholder="Celular">
 							                    </label>
 							                </section>
 						          		</div>
 						          		<div class="row">
 							            	<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Profesión">
+							                    	<input type="text" name="Profesión_Ref_Personal" placeholder="Profesión">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Empresa donde labora">
+							                    	<input type="text" name="Empresa_donde_labora" placeholder="Empresa donde labora">
 							                    </label>
 							                </section>
 						          		</div>
 						            </fieldset>
+						            <footer>
+											<button type="submit" class="btn btn-primary" name="submit_s3">Enviar</button>
+									</footer>
 						         </form>
 						     </div>
 						     <div class="tab-pane fade" id="s4">
@@ -544,12 +552,12 @@
 						            	<div class="row">
 							            	<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Institucion">
+							                    	<input type="text" name="Institucion" placeholder="Institucion">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 													<label class="select">
-														<select class="input-sm">
+														<select class="input-sm" name="Nivel">
 															<option value="0">Nivel</option>
 															<option value="1">Bachiller</option>
 															<option value="2">Técnico</option>
@@ -563,24 +571,24 @@
 						          		<div class="row">
 							            	<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Fecha de inicio">
+							                    	<input type="date" name="Fecha_de_inicio" placeholder="Fecha de inicio">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Fecha de finalizacion">
+							                    	<input type="date" name="Fecha_de_finalizacion" placeholder="Fecha de finalizacion">
 							                    </label>
 							                </section>
 						          		</div>
 						          		<div class="row">
 							            	<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Titulo">
+							                    	<input type="text" name="Titulo" placeholder="Titulo">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 													<label class="select">
-														<select class="input-sm">
+														<select class="input-sm" name="Ciudad_Educacion">
 															<option value="0">Ciudad</option>
 															<option value="1">Bachiller</option>
 															<option value="2">Técnico</option>
@@ -592,6 +600,9 @@
 												</section>
 						          		</div>
 						            </fieldset>
+						            <footer>
+											<button type="submit" class="btn btn-primary" name="submit_s4">Enviar</button>
+									</footer>
 						         </form>
 						     </div>
 						     <div class="tab-pane fade" id="s5">
@@ -603,12 +614,12 @@
 						            	<div class="row">
 						            		<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Idioma">
+							                    	<input type="text" name="Idioma" placeholder="Idioma">
 							                    </label>
 							                </section>
 							                <section class="col col-6">
 													<label class="select">
-														<select class="input-sm">
+														<select class="input-sm" name="Lee">
 															<option value="0">Lee</option>
 															<option value="1">E</option>
 															<option value="2">B</option>
@@ -620,7 +631,7 @@
 						            	<div class="row">
 						            		<section class="col col-6">
 													<label class="select">
-														<select class="input-sm">
+														<select class="input-sm" name="Habla">
 															<option value="0">Habla</option>
 															<option value="1">E</option>
 															<option value="2">B</option>
@@ -630,7 +641,7 @@
 							                </section>
 							                <section class="col col-6">
 													<label class="select">
-														<select class="input-sm">
+														<select class="input-sm" name="Escribe">
 															<option value="0">Escribe</option>
 															<option value="1">E</option>
 															<option value="2">B</option>
@@ -647,52 +658,55 @@
 						            	<div class="row">
 							            	<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Empresa">
+							                    	<input type="text" name="Empresa" placeholder="Empresa">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Cargo">
+							                    	<input type="text" name="Cargo" placeholder="Cargo">
 							                    </label>
 							                </section>
 						          		</div>
 						          		<div class="row">
 							            	<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Fecha de inicio">
+							                    	<input type="date" name="Fecha_de_inicio_Laboral" placeholder="Fecha de inicio">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Fecha de finalizacion">
+							                    	<input type="date" name="Fecha_de_finalizacion_Laboral" placeholder="Fecha de finalizacion">
 							                    </label>
 							                </section>
 						          		</div>
 						          		<div class="row">
 							            	<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Funciones">
+							                    	<input type="text" name="Funciones" placeholder="Funciones">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Teléfono">
+							                    	<input type="number" name="Teléfono_Exp_Laboral" placeholder="Teléfono">
 							                    </label>
 							                </section>
 						          		</div>
 						          		<div class="row">
 							            	<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Nombre del Jefe inmediato">
+							                    	<input type="text" name="Nombre_del_Jefe_inmediato" placeholder="Nombre del Jefe inmediato">
 							                    </label>
 							                </section>
 											<section class="col col-6">
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Motivo de retiro">
+							                    	<input type="text" name="Motivo_de_retiro" placeholder="Motivo de retiro">
 							                    </label>
 							                </section>
 						          		</div>
 						            </fieldset>
+						            <footer>
+											<button type="submit" class="btn btn-primary" name="submit_s5">Enviar</button>
+									</footer>
 						         </form>
 						     </div>
 						     
@@ -705,13 +719,13 @@
 							            	<div class="row">
 								            	<section class="col col-6">
 													<label class="toggle">
-														<input type="checkbox" name="checkbox-toggle">
+														<input type="checkbox" name="Cuenta_Bancaria">
 														<i data-swchon-text="SI" data-swchoff-text="NO"></i>Cuenta Bancaria
 													</label>
 												</section>
 												<section class="col col-6">
 														<label class="select">
-															<select class="input-sm">
+															<select class="input-sm" name="Tipo_de_cuenta">
 																<option value="0">Tipo de cuenta</option>
 																<option value="1">Ceunta de ahorro</option>
 																<option value="2">Cuenta corriente</option>
@@ -722,12 +736,12 @@
 							          		<div class="row">
 								            	<section class="col col-6">
 								                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-								                    	<input type="text" name="e_id" placeholder="Banco">
+								                    	<input type="text" name="Banco" placeholder="Banco">
 								                    </label>
 								                </section>
 												<section class="col col-6">
 													<label class="toggle">
-														<input type="checkbox" name="checkbox-toggle">
+														<input type="checkbox" name="Esta_Activa">
 														<i data-swchon-text="SI" data-swchoff-text="NO"></i>¿Esta Activa?
 													</label>
 												</section>
@@ -740,7 +754,7 @@
 						            	<div class="row">
 							            	<section class="col col-6">
 													<label class="select">
-														<select class="input-sm">
+														<select class="input-sm" name="Vivienda_en_la_que_habita">
 															<option value="0">Vivienda en la que habita</option>
 															<option value="1">Propia</option>
 															<option value="2">Alquilada</option>
@@ -751,7 +765,7 @@
 							                </section>
 											<section class="col col-6">
 													<label class="select">
-														<select class="input-sm">
+														<select class="input-sm" name="Mat_de_los_exteriores_de_la_vivienda">
 															<option value="0">Material de los exteriores de la vivienda</option>
 															<option value="1">Ladrillo/Bloque</option>
 															<option value="2">Material prefabricado</option>
@@ -770,13 +784,13 @@
 						          		<label>¿Cuenta con servivios publicos?</label><br>
 							            	<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Agua">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Agua
 												</label>
 											</section>
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Energia">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Energia Electrica
 												</label>
 											</section>
@@ -784,13 +798,13 @@
 						          		<div class="row">
 							            	<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Alcantarillado">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Alcantarillado 	
 												</label>
 											</section>
 											<section class="col col-6">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Gas">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Gas
 												</label>
 											</section>
@@ -798,19 +812,19 @@
 						          		<div class="row">
 						          		<section section class="col col-4">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Télefono_Servicios_Publicos">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Télefono
 												</label>
 											</section>
 						          			<section class="col col-4">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Conyugue">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Conyugue
 												</label>
 											</section>
 							            	<section class="col col-4">
 												<label class="toggle">
-													<input type="checkbox" name="checkbox-toggle">
+													<input type="checkbox" name="Trabaja_conyugue">
 													<i data-swchon-text="SI" data-swchoff-text="NO"></i>Trabaja
 												</label>
 											</section>
@@ -818,11 +832,14 @@
 						          		<div class="row">
 						          			<section>
 							                	<label class="input"> <i class="icon-prepend glyphicon glyphicon-barcode"></i>
-							                    	<input type="text" name="e_id" placeholder="Promedio de ingreso mensual">
+							                    	<input type="text" name="Promedio_de_ingreso_mensual" placeholder="Promedio de ingreso mensual">
 							                    </label>
 							                </section>
 						          		</div>
 						            </fieldset>
+						            <footer>
+											<button type="submit" class="btn btn-primary" name="submit_s6">Enviar</button>
+									</footer>
 						         </form>
 						     </div>
 						</div>
